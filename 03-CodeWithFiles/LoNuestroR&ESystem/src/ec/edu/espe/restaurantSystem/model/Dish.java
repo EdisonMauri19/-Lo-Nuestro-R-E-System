@@ -76,4 +76,10 @@ public class Dish {
         System.out.println("Precio: "+this.price);
     }
     
+    @Override
+    public String toString() {
+        return "\nPlato N: "+id + "     "+nameDish + "       " + price + "$";
+    }
+    
+    
 }

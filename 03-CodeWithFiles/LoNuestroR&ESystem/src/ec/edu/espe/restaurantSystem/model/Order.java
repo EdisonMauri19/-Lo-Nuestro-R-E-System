@@ -6,6 +6,8 @@
 package ec.edu.espe.restaurantSystem.model;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  *
@@ -16,7 +18,7 @@ public class Order {
     private String name;
     private String dni;
     private String address;
-    private ArrayList<Dish> dishList;
+    private List<Dish> dishList = new ArrayList<>();
     private float priceOrder;
 
     public Order() {
@@ -89,7 +91,7 @@ public class Order {
     /**
      * @return the dishList
      */
-    public ArrayList<Dish> getDishList() {
+    public List<Dish> getDishList() {
         return dishList;
     }
 
@@ -131,6 +133,11 @@ public class Order {
             System.out.println(this.dishList.get(i).getName()+" -----> "+this.dishList.get(i).getPrice()+" $");
         }
         System.out.println("\nTotal: "+this.getPriceOrder()+" $");
+    }
+
+    @Override
+    public String toString() {
+        return "\nOrden N :"+ id + "\nNombre   : "+name + "\nC.I      : "+dni + "\nDireccion: "+address + "\nPlatos: \n" + Arrays.toString(dishList.toArray()) + "\nTotal:      " + this.getPriceOrder() + "$";
     }
     
 } 

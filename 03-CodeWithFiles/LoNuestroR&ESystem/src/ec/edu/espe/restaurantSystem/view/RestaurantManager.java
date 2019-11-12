@@ -5,6 +5,8 @@ import ec.edu.espe.restaurantSystem.model.DishManager;
 import ec.edu.espe.restaurantSystem.model.Order;
 import ec.edu.espe.restaurantSystem.model.OrderManager;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 /*
@@ -46,11 +48,9 @@ public class RestaurantManager {
                     dishM.addDish(newDish);
                     break;
                 case 2:
-                    ArrayList<Dish> arrDish = new ArrayList<Dish>();
+                    List<Dish> arrDish = new ArrayList<>();
                     arrDish = dishM.readDishes();
-                    for (Dish dish: arrDish){
-                        dish.showInformation();
-                    }
+                    System.out.println(Arrays.toString(arrDish.toArray()));
                     break;
                  case 3:
                     Order newOrder = new Order();
@@ -58,11 +58,9 @@ public class RestaurantManager {
                     orderM.addOrder(newOrder);
                     break;
                  case 4:
-                    ArrayList<Order> arrOrder = new ArrayList<Order>();
+                    List<Order> arrOrder = new ArrayList<>();
                     arrOrder = orderM.readOrders();
-                    for (Order order: arrOrder){
-                        order.showInformation();
-                    }
+                     System.out.println(Arrays.toString(arrOrder.toArray()));
                     break;
                  case 5:
                     exit = true;
