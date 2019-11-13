@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ec.edu.espe.restaurantSystem.model;
+package ec.edu.espe.restaurantSystem.controller;
 
+import ec.edu.espe.restaurantSystem.model.Dish;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;

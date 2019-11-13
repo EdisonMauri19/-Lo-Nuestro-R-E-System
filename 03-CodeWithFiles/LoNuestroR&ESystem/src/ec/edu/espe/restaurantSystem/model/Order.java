@@ -122,18 +122,7 @@ public class Order {
         this.priceOrder = priceOrder;
     }
     
-    public void showInformation(){
-        System.out.println("\nOrden N :"+ this.id);
-        System.out.println("\tDatos del Pedido");
-        System.out.println("Nombre   : "+this.name);
-        System.out.println("C.I      : "+this.dni);
-        System.out.println("Direccion: "+this.address);
-        System.out.println("\tPlatos");
-        for (int i = 0; i < this.dishList.size(); i++) {
-            System.out.println(this.dishList.get(i).getName()+" -----> "+this.dishList.get(i).getPrice()+" $");
-        }
-        System.out.println("\nTotal: "+this.getPriceOrder()+" $");
-    }
+   
 
     @Override
     public String toString() {

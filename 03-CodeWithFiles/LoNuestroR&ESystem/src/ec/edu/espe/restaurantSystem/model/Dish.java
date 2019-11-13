@@ -70,11 +70,7 @@ public class Dish {
     
    
     
-    public void showInformation(){
-        System.out.println("\n\tPlato N: "+this.id);
-        System.out.println("Nombre: "+this.nameDish);
-        System.out.println("Precio: "+this.price);
-    }
+   
     
     @Override
     public String toString() {

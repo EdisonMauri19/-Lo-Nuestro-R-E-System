@@ -1,9 +1,9 @@
 package ec.edu.espe.restaurantSystem.view;
 
 import ec.edu.espe.restaurantSystem.model.Dish;
-import ec.edu.espe.restaurantSystem.model.DishManager;
+import ec.edu.espe.restaurantSystem.controller.DishManager;
 import ec.edu.espe.restaurantSystem.model.Order;
-import ec.edu.espe.restaurantSystem.model.OrderManager;
+import ec.edu.espe.restaurantSystem.controller.OrderManager;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
