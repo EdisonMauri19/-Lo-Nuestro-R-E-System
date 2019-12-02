@@ -74,7 +74,7 @@ public class Dish {
     
     @Override
     public String toString() {
-        return "\nPlato N: "+id + "     "+nameDish + "       " + price + "$";
+        return id + ";"+nameDish + ";" + price;
     }
     
     
