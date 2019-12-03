@@ -6,7 +6,7 @@
 package ec.edu.espe.restaurantSystem.controller;
 
 import ec.edu.espe.restaurantSystem.controller.DishManager;
-import ec.edu.espe.restaurantSystem.model.Dish;
+import ec.edu.espe.restaurantSystem.model.Product;
 import ec.edu.espe.restaurantSystem.model.Order;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -25,7 +25,7 @@ public class OrderManager {
     public Order dataEntry(){
         Scanner scn = new Scanner(System.in);
         Order order = new Order();
-        ArrayList<Dish> arrDish = new ArrayList<Dish>();
+        ArrayList<Product> arrDish = new ArrayList<Product>();
         try{
             
             System.out.println("Codigo Orden : ");
@@ -102,9 +102,9 @@ public class OrderManager {
                     order.setName(contact[1]);
                     order.setDni(contact[2]);
                     order.setAddress(contact[3]);
-                    ArrayList<Dish> arrDish = new ArrayList<Dish>();
+                    ArrayList<Product> arrDish = new ArrayList<Product>();
                     for (int i = 4; i < contact.length-1; i++) {
-                        Dish dish = new Dish();
+                        Product dish = new Product();
                         int id = Integer.parseInt(contact[i]);
                         dish = dishM.searchDish(id);
                         arrDish.add(dish);
@@ -141,9 +141,9 @@ public class OrderManager {
         }
     }
     
-    public ArrayList<Dish> dishesOrder(){
+    public ArrayList<Product> dishesOrder(){
         Scanner scn = new Scanner(System.in);
-        ArrayList<Dish> arrDish = new ArrayList<Dish>();
+        ArrayList<Product> arrDish = new ArrayList<Product>();
         DishManager dishM = new DishManager();
         
         try{ 
@@ -151,7 +151,7 @@ public class OrderManager {
             do{
                 System.out.println("Inserte codigo de plato : ");
                 int id = (Integer.parseInt(scn.nextLine()));
-                Dish dish = new Dish();
+                Product dish = new Product();
                 dish = dishM.searchDish(id);
                 arrDish.add(dish);
                 System.out.println("Añadir otro plato?   1. Si     2. No");

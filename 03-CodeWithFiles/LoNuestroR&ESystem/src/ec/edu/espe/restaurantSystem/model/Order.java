@@ -18,13 +18,13 @@ public class Order {
     private String name;
     private String dni;
     private String address;
-    private List<Dish> dishList = new ArrayList<>();
+    private List<Product> dishList = new ArrayList<>();
     private float priceOrder;
 
     public Order() {
     }
 
-    public Order(int id, String name, String dni, String address, ArrayList<Dish> dishList) {
+    public Order(int id, String name, String dni, String address, ArrayList<Product> dishList) {
         this.id = id;
         this.name = name;
         this.dni = dni;
@@ -91,14 +91,14 @@ public class Order {
     /**
      * @return the dishList
      */
-    public List<Dish> getDishList() {
+    public List<Product> getDishList() {
         return dishList;
     }
 
     /**
      * @param dishList the dishList to set
      */
-    public void setDishList(ArrayList<Dish> dishList) {
+    public void setDishList(ArrayList<Product> dishList) {
         this.dishList = dishList;
     }
 

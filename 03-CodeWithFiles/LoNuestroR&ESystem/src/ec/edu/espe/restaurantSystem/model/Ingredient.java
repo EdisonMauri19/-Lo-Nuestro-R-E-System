@@ -9,7 +9,9 @@ package ec.edu.espe.restaurantSystem.model;
  *
  * @author camyt
  */
-public class Dish extends Product {
-    String type;
-    int weight;
+class Ingredient {
+    int id;
+    String name;
+    double quantity;
+    
 }

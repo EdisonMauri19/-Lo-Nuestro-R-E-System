@@ -5,7 +5,7 @@
  */
 package ec.edu.espe.restaurantSystem.controller;
 
-import ec.edu.espe.restaurantSystem.model.Dish;
+import ec.edu.espe.restaurantSystem.model.Product;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -20,9 +20,9 @@ import java.util.Scanner;
  * @author user
  */
 public class DishManager {
-    public Dish dataEntry(){
+    public Product dataEntry(){
         Scanner scn = new Scanner(System.in);
-        Dish newDish = new Dish();
+        Product newDish = new Product();
         try{
             
             System.out.println("Codigo Plato : ");
@@ -39,7 +39,7 @@ public class DishManager {
         return newDish;
     }
     
-    public void addDish(Dish newDish)
+    public void addDish(Product newDish)
     {
         try
         {
@@ -66,8 +66,8 @@ public class DishManager {
         }
     }
     
-    public ArrayList<Dish> readDishes(){
-        ArrayList<Dish> arrDish = new ArrayList<Dish>();
+    public ArrayList<Product> readDishes(){
+        ArrayList<Product> arrDish = new ArrayList<Product>();
         try{
             File f=new File("Dish.csv");
             if(f.exists())
@@ -77,7 +77,7 @@ public class DishManager {
                 String line;
                 while((line = br.readLine())!=null)
                 {
-                    Dish dish = new Dish();
+                    Product dish = new Product();
                     String[] contact = line.split(";");
                     
                     dish.setId(Integer.parseInt(contact[0]));
@@ -95,9 +95,9 @@ public class DishManager {
         return arrDish;
     }
     
-    public Dish searchDish(int id){
-        ArrayList<Dish> arrDish = new ArrayList<Dish>();
-        Dish dish = new Dish();
+    public Product searchDish(int id){
+        ArrayList<Product> arrDish = new ArrayList<Product>();
+        Product dish = new Product();
         arrDish = readDishes();
         for (int i = 0; i < arrDish.size(); i++) {
             if (arrDish.get(i).getId() == id) {
@@ -107,7 +107,7 @@ public class DishManager {
         return dish;
     }
     
-    public void upgradeDish(ArrayList<Dish> arrDish){
+    public void upgradeDish(ArrayList<Product> arrDish){
         File f=new File("Dish.csv");
         f.delete();
         for (int i = 0; i < arrDish.size(); i++) {

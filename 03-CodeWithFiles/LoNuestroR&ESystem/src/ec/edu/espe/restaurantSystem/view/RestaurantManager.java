@@ -1,6 +1,6 @@
 package ec.edu.espe.restaurantSystem.view;
 
-import ec.edu.espe.restaurantSystem.model.Dish;
+import ec.edu.espe.restaurantSystem.model.Product;
 import ec.edu.espe.restaurantSystem.controller.DishManager;
 import ec.edu.espe.restaurantSystem.model.Order;
 import ec.edu.espe.restaurantSystem.controller.OrderManager;
@@ -44,13 +44,13 @@ public class RestaurantManager {
 
             switch(option){
                 case 1:
-                    Dish newDish;
+                    Product newDish;
                     newDish = dishM.dataEntry();
                     FileLibrary.addToFile(newDish);
                     break;
                 case 2:
                     List<Object> arrDish;
-                    arrDish = FileLibrary.readObjects(new Dish());
+                    arrDish = FileLibrary.readObjects(new Product());
                     System.out.println(Arrays.toString(arrDish.toArray()));
                     break;
                  case 3:

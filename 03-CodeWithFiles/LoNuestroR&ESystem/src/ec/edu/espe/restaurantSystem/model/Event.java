@@ -10,11 +10,11 @@ public class Event {
     private int time;
     private Date date;
     private String typeEvent;
-    private ArrayList<Dish> menu;
+    private ArrayList<Product> menu;
     private int guests;
     private int extraService;
 
-    public Event(int id, int time, Date date, String typeEvent, ArrayList<Dish> menu, int guests, int extraService) {
+    public Event(int id, int time, Date date, String typeEvent, ArrayList<Product> menu, int guests, int extraService) {
         this.id = id;
         this.time = time;
         this.date = date;
@@ -56,11 +56,11 @@ public class Event {
         this.typeEvent = typeEvent;
     }
 
-    public ArrayList<Dish> getMenu() {
+    public ArrayList<Product> getMenu() {
         return menu;
     }
 
-    public void setMenu(ArrayList<Dish> menu) {
+    public void setMenu(ArrayList<Product> menu) {
         this.menu = menu;
     }
 
