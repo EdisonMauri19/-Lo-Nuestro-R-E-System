@@ -1,9 +1,8 @@
-package ec.edu.espe.exam2question11.view;
+package ec.edu.espe.restaurantSystem.view;
 
-
-
-import ec.edu.espe.exam2question11.controller.UserController;
-import ec.edu.espe.exam2question11.model.User;
+import ec.edu.espe.restaurantSystem.controller.AccountManager;
+import ec.edu.espe.restaurantSystem.model.Account;
+import ec.edu.espe.restaurantSystem.view.frmMenu;
 import javax.swing.JOptionPane;
 
 /*
@@ -36,88 +35,56 @@ public class frmLogin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        txtUserName = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         txtPassword = new javax.swing.JPasswordField();
         btnLogin = new javax.swing.JButton();
-        btnNewUser = new javax.swing.JButton();
+        txtUserName = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(800, 600));
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel1.setText("Login");
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setText("Username:");
+        jLabel4.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
+        jLabel4.setText("Login");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(317, 26, 147, 64));
 
-        jLabel3.setText("Password:");
+        jLabel5.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        jLabel5.setText("Username:");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, -1, -1));
 
-        txtUserName.setToolTipText("Only Characters");
-        txtUserName.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtUserNameKeyTyped(evt);
-            }
-        });
+        jLabel6.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        jLabel6.setText("Password:");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, -1, 22));
+        jPanel1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 260, 130, -1));
 
+        btnLogin.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         btnLogin.setText("Login");
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLoginActionPerformed(evt);
             }
         });
+        jPanel1.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 330, 109, 47));
+        jPanel1.add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 210, 130, 21));
 
-        btnNewUser.setText("+ New User");
-        btnNewUser.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNewUserActionPerformed(evt);
-            }
-        });
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/restaurantSystem/view/img/user.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 180, -1, 180));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(168, 168, 168)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(85, 85, 85)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnLogin)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtUserName)
-                                .addComponent(txtPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)))))
-                .addContainerGap(114, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnNewUser)
-                .addGap(22, 22, 22))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
-                .addComponent(btnLogin)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
-                .addComponent(btnNewUser)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -125,37 +92,22 @@ public class frmLogin extends javax.swing.JFrame {
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
+        Account account;
+        AccountManager accountM = new AccountManager();
         String userName = txtUserName.getText();
         String password = txtPassword.getText();
-        UserController userC = new UserController();
-        User user = userC.Validate(userName, password);
-        
-        if(user != null){
-            JOptionPane.showMessageDialog(this, "Login Correcto");
+        account  = accountM.valAccount(userName, password);
+        if(account != null){
+            JOptionPane.showMessageDialog(this, "Ingreso correcto!");
             frmMenu menu = new frmMenu();
             menu.setVisible(true);
             this.setVisible(false);
-        }else {
-            JOptionPane.showMessageDialog(this, "Usuario o Contraseña Incorrecto");
+        }else{
+            JOptionPane.showMessageDialog(this, "Usuario o contraseña Incorrecta");
             txtPassword.setText("");
-            txtUserName.setFocusable(true);
+            txtPassword.setFocusable(true);
         }
     }//GEN-LAST:event_btnLoginActionPerformed
-
-    private void txtUserNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUserNameKeyTyped
-        // TODO add your handling code here:
-        char inputChar = evt.getKeyChar();
-        if(!Character.isAlphabetic(inputChar)){
-            evt.consume();
-        }
-    }//GEN-LAST:event_txtUserNameKeyTyped
-
-    private void btnNewUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewUserActionPerformed
-        // TODO add your handling code here:
-        frmNewUser newU = new frmNewUser();
-        newU.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_btnNewUserActionPerformed
 
     /**
      * @param args the command line arguments
@@ -195,10 +147,11 @@ public class frmLogin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLogin;
-    private javax.swing.JButton btnNewUser;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtUserName;
     // End of variables declaration//GEN-END:variables

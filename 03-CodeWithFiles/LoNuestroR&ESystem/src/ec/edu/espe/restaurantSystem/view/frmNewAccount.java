@@ -5,6 +5,7 @@
  */
 package ec.edu.espe.restaurantSystem.view;
 
+import ec.edu.espe.restaurantSystem.controller.AccountManager;
 import ec.edu.espe.restaurantSystem.model.Account;
 import javax.swing.JOptionPane;
 
@@ -223,7 +224,7 @@ public class frmNewAccount extends javax.swing.JFrame {
     private void btnAddAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddAccountActionPerformed
         // TODO add your handling code here:
         int validation = validateFields();
-        if(validation == 1){
+        if(validation == 0){
             JOptionPane.showMessageDialog(this, "Llenar todos los Campos");
         }else{
             if(txtPassword.getText().length() >= 8)
@@ -235,12 +236,21 @@ public class frmNewAccount extends javax.swing.JFrame {
                 String userType = cmbUserType.getItemAt(cmbUserType.getSelectedIndex());
                 
                 Account account = new Account(userName, password, name, lastName, userType);
+                AccountManager accM = new AccountManager();
+                accM.addAccount(account);
+                JOptionPane.showMessageDialog(this, "Registro correcto !");
+                frmMenu menu = new frmMenu();
+                menu.setVisible(true);
+                this.setVisible(false);
+            }else{
+                JOptionPane.showMessageDialog(this, "Contraseña inferiro a 8 caracteres");
+                txtPassword.setText("");
             }
         }
     }//GEN-LAST:event_btnAddAccountActionPerformed
 
     public int validateFields(){
-        if(txtUserName.getText().isEmpty()||txtPassword.getText().isEmpty()||txtName.getText().isEmpty()||txtLastName.getText().isEmpty()){
+        if(txtUserName.getText().equals("")||txtPassword.getText().equals("")||txtName.getText().equals("")||txtLastName.getText().equals("")){
             return 0;
         }else return 1;
     }

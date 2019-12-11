@@ -132,8 +132,12 @@ public class frmSplashScreen extends javax.swing.JFrame implements Runnable{
         while(time != null){
             try {
                 Thread.sleep(5000);
-                this.dispose();
-                System.exit(0);
+                this.setVisible(false);
+                frmLogin login = new frmLogin();
+                login.setVisible(true);
+                break;
+                
+                
             } catch (InterruptedException ex) {
                 Logger.getLogger(frmSplashScreen.class.getName()).log(Level.SEVERE, null, ex);
             }

@@ -50,7 +50,7 @@ public class RestaurantManager {
                     break;
                 case 2:
                     List<Object> arrDish;
-                    arrDish = FileLibrary.readObjects(new Product());
+                    arrDish = FileLibrary.readObjects(Product.class.getSimpleName());
                     System.out.println(Arrays.toString(arrDish.toArray()));
                     break;
                  case 3:
@@ -60,7 +60,7 @@ public class RestaurantManager {
                     break;
                  case 4:
                     List<Object> arrOrder;
-                    arrOrder = FileLibrary.readObjects(new Order());
+                    arrOrder = FileLibrary.readObjects(Order.class.getSimpleName());
                      System.out.println(Arrays.toString(arrOrder.toArray()));
                     break;
                  case 5:
