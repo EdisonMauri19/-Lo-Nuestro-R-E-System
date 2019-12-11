@@ -10,19 +10,12 @@ public class Event {
     private int time;
     private Date date;
     private String typeEvent;
-    private ArrayList<Product> menu;
+    private ArrayList<ExtraService> services;
+    private Order menu;
     private int guests;
     private int extraService;
 
-    public Event(int id, int time, Date date, String typeEvent, ArrayList<Product> menu, int guests, int extraService) {
-        this.id = id;
-        this.time = time;
-        this.date = date;
-        this.typeEvent = typeEvent;
-        this.menu = menu;
-        this.guests = guests;
-        this.extraService = extraService;
-    }
+    
 
     public int getId() {
         return id;
@@ -56,12 +49,12 @@ public class Event {
         this.typeEvent = typeEvent;
     }
 
-    public ArrayList<Product> getMenu() {
-        return menu;
+    public ArrayList<ExtraService> getMenu() {
+        return services;
     }
 
-    public void setMenu(ArrayList<Product> menu) {
-        this.menu = menu;
+    public void setMenu(ArrayList<ExtraService> menu) {
+        this.services = menu;
     }
 
     public int getGuests() {
