@@ -3,18 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/camyt/Desktop/-Lo-Nuestro-R-E-System/03-CodeWithFiles/LoNuestroR&amp;ESystem/src/ec/edu/espe/restaurantSystem/view/frmSplashScreen.java</file>
-            <file>file:/C:/Users/camyt/Desktop/-Lo-Nuestro-R-E-System/03-CodeWithFiles/LoNuestroR&amp;ESystem/src/ec/edu/espe/restaurantSystem/lib/FileLibrary.java</file>
-            <file>file:/C:/Users/camyt/Desktop/-Lo-Nuestro-R-E-System/03-CodeWithFiles/LoNuestroR&amp;ESystem/src/ec/edu/espe/restaurantSystem/controller/frmOrder.java</file>
-            <file>file:/C:/Users/camyt/Desktop/-Lo-Nuestro-R-E-System/03-CodeWithFiles/LoNuestroR&amp;ESystem/src/ec/edu/espe/restaurantSystem/view/frmMenu.java</file>
-            <file>file:/C:/Users/camyt/Desktop/-Lo-Nuestro-R-E-System/03-CodeWithFiles/LoNuestroR&amp;ESystem/src/ec/edu/espe/restaurantSystem/model/Account.java</file>
-            <file>file:/C:/Users/camyt/Desktop/-Lo-Nuestro-R-E-System/03-CodeWithFiles/LoNuestroR&amp;ESystem/src/ec/edu/espe/restaurantSystem/view/frmLogin.java</file>
-            <file>file:/C:/Users/camyt/Desktop/-Lo-Nuestro-R-E-System/03-CodeWithFiles/LoNuestroR&amp;ESystem/src/ec/edu/espe/restaurantSystem/controller/AccountManager.java</file>
-            <file>file:/C:/Users/camyt/Desktop/-Lo-Nuestro-R-E-System/03-CodeWithFiles/LoNuestroR&amp;ESystem/src/ec/edu/espe/restaurantSystem/model/Product.java</file>
             <file>file:/C:/Users/camyt/Desktop/-Lo-Nuestro-R-E-System/03-CodeWithFiles/LoNuestroR&amp;ESystem/src/ec/edu/espe/restaurantSystem/controller/frmEvent.java</file>
-            <file>file:/C:/Users/camyt/Desktop/-Lo-Nuestro-R-E-System/03-CodeWithFiles/LoNuestroR&amp;ESystem/src/ec/edu/espe/restaurantSystem/view/frmNewAccount.java</file>
-            <file>file:/C:/Users/camyt/Desktop/-Lo-Nuestro-R-E-System/03-CodeWithFiles/LoNuestroR&amp;ESystem/src/ec/edu/espe/restaurantSystem/view/frmDish.java</file>
-            <file>file:/C:/Users/camyt/Desktop/-Lo-Nuestro-R-E-System/03-CodeWithFiles/LoNuestroR&amp;ESystem/src/ec/edu/espe/restaurantSystem/view/RestaurantManager.java</file>
+            <file>file:/C:/Users/camyt/Desktop/-Lo-Nuestro-R-E-System/03-CodeWithFiles/LoNuestroR&amp;ESystem/src/ec/edu/espe/restaurantSystem/view/frmScheduleEvent.java</file>
+            <file>file:/C:/Users/camyt/Desktop/-Lo-Nuestro-R-E-System/03-CodeWithFiles/LoNuestroR&amp;ESystem/src/ec/edu/espe/restaurantSystem/view/frmOrder.java</file>
+            <file>file:/C:/Users/camyt/Desktop/-Lo-Nuestro-R-E-System/03-CodeWithFiles/LoNuestroR&amp;ESystem/src/ec/edu/espe/restaurantSystem/model/Event.java</file>
+            <file>file:/C:/Users/camyt/Desktop/-Lo-Nuestro-R-E-System/03-CodeWithFiles/LoNuestroR&amp;ESystem/src/ec/edu/espe/restaurantSystem/view/frmEvent.java</file>
+            <file>file:/C:/Users/camyt/Desktop/-Lo-Nuestro-R-E-System/03-CodeWithFiles/LoNuestroR&amp;ESystem/src/ec/edu/espe/restaurantSystem/view/frmMenu.java</file>
+            <file>file:/C:/Users/camyt/Desktop/-Lo-Nuestro-R-E-System/03-CodeWithFiles/LoNuestroR&amp;ESystem/src/ec/edu/espe/restaurantSystem/view/frmMenuOption.java</file>
         </group>
     </open-files>
 </project-private>

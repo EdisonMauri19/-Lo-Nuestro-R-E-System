@@ -73,14 +73,29 @@ public class frmMenu extends javax.swing.JFrame {
         jMenu3.setText("Eventos");
 
         jMenuItem6.setText("Agenda");
+        jMenuItem6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuItem6MouseClicked(evt);
+            }
+        });
         jMenu3.add(jMenuItem6);
 
         jMenuItem7.setText("Nuevo Evento");
+        jMenuItem7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuItem7MouseClicked(evt);
+            }
+        });
         jMenu3.add(jMenuItem7);
 
         jMenuBar1.add(jMenu3);
 
         jMenu4.setText("Ordenes");
+        jMenu4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu4MouseClicked(evt);
+            }
+        });
         jMenuBar1.add(jMenu4);
 
         jMenu5.setText("Gestión");
@@ -91,7 +106,7 @@ public class frmMenu extends javax.swing.JFrame {
         jMenuItem9.setText("Ingredientes");
         jMenu5.add(jMenuItem9);
 
-        jMenuItem10.setText("Sericios para Eventos");
+        jMenuItem10.setText("Servicios para Eventos");
         jMenu5.add(jMenuItem10);
 
         jMenuBar1.add(jMenu5);
@@ -146,6 +161,25 @@ public class frmMenu extends javax.swing.JFrame {
         menuOp.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jMenu2MouseClicked
+
+    private void jMenuItem7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem7MouseClicked
+        // TODO add your handling code here:
+        frmEvent frmE = new frmEvent();
+        frmE.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jMenuItem7MouseClicked
+
+    private void jMenuItem6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem6MouseClicked
+        // TODO add your handling code here:
+        frmScheduleEvent schedule = new frmScheduleEvent();
+        schedule.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jMenuItem6MouseClicked
+
+    private void jMenu4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu4MouseClicked
+        // TODO add your handling code here:
+       
+    }//GEN-LAST:event_jMenu4MouseClicked
 
     /**
      * @param args the command line arguments

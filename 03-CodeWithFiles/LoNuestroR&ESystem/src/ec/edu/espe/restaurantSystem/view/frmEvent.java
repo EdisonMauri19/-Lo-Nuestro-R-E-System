@@ -34,7 +34,7 @@ public class frmEvent extends javax.swing.JFrame {
         lblDate = new javax.swing.JLabel();
         cmbType = new javax.swing.JComboBox<>();
         spiPeople = new javax.swing.JSpinner();
-        dchDate = new com.toedter.calendar.JDateChooser();
+        dchDate = new org.netbeans.modules.form.InvalidComponent();
         lblMenu = new javax.swing.JLabel();
         rbtFirstDish = new javax.swing.JRadioButton();
         rbtSecondDish = new javax.swing.JRadioButton();
@@ -92,6 +92,11 @@ public class frmEvent extends javax.swing.JFrame {
 
         buttonGroup1.add(rbtThirdDish);
         rbtThirdDish.setText("Extras");
+        rbtThirdDish.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtThirdDishActionPerformed(evt);
+            }
+        });
 
         tblMenuEvent.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -217,6 +222,10 @@ public class frmEvent extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_rbtDessertActionPerformed
 
+    private void rbtThirdDishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtThirdDishActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rbtThirdDishActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -258,7 +267,7 @@ public class frmEvent extends javax.swing.JFrame {
     private javax.swing.JButton btnExit;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JComboBox<String> cmbType;
-    private com.toedter.calendar.JDateChooser dchDate;
+    private org.netbeans.modules.form.InvalidComponent dchDate;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
