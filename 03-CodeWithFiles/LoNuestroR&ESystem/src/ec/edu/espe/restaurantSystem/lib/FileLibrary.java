@@ -88,10 +88,8 @@ public class FileLibrary {
                 JsonArray jArray = dates.getAsJsonArray();
                 for (int i = 0; i < jArray.size(); i++) {
                     String jString = jArray.get(i).getAsJsonObject().toString();
-                    System.out.println(jString);
                     Object object = gson.fromJson(jString, Object.class);
                     objects.add(object);
-                    System.out.println(Arrays.toString(objects.toArray()));
                 }
                 
                 fr.close();

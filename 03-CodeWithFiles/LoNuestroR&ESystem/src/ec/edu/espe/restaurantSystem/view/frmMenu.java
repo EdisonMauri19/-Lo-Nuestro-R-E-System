@@ -39,7 +39,6 @@ public class frmMenu extends javax.swing.JFrame {
         jMenu4 = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
         jMenuItem8 = new javax.swing.JMenuItem();
-        jMenuItem9 = new javax.swing.JMenuItem();
         jMenuItem10 = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
         jMenuItem11 = new javax.swing.JMenuItem();
@@ -100,11 +99,13 @@ public class frmMenu extends javax.swing.JFrame {
 
         jMenu5.setText("Gestión");
 
-        jMenuItem8.setText("Platos");
+        jMenuItem8.setText("Menú");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
         jMenu5.add(jMenuItem8);
-
-        jMenuItem9.setText("Ingredientes");
-        jMenu5.add(jMenuItem9);
 
         jMenuItem10.setText("Servicios para Eventos");
         jMenu5.add(jMenuItem10);
@@ -181,6 +182,13 @@ public class frmMenu extends javax.swing.JFrame {
        
     }//GEN-LAST:event_jMenu4MouseClicked
 
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        // TODO add your handling code here:
+        frmDish dish = new frmDish();
+        dish.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -233,7 +241,6 @@ public class frmMenu extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
-    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JMenu mnuAccount;
     // End of variables declaration//GEN-END:variables
 }

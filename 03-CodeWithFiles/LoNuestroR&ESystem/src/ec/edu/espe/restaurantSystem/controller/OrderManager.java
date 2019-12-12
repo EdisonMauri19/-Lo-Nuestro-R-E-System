@@ -4,8 +4,6 @@
  * and open the template in the editor.
  */
 package ec.edu.espe.restaurantSystem.controller;
-
-import ec.edu.espe.restaurantSystem.controller.DishManager;
 import ec.edu.espe.restaurantSystem.model.Product;
 import ec.edu.espe.restaurantSystem.model.Order;
 import java.io.BufferedReader;
@@ -104,7 +102,7 @@ public class OrderManager {
                     order.setAddress(contact[3]);
                     ArrayList<Product> arrDish = new ArrayList<Product>();
                     for (int i = 4; i < contact.length-1; i++) {
-                        Product dish = new Product();
+                        Product dish = null;
                         int id = Integer.parseInt(contact[i]);
                         dish = dishM.searchDish(id);
                         arrDish.add(dish);
@@ -151,7 +149,7 @@ public class OrderManager {
             do{
                 System.out.println("Inserte codigo de plato : ");
                 int id = (Integer.parseInt(scn.nextLine()));
-                Product dish = new Product();
+                Product dish = null;
                 dish = dishM.searchDish(id);
                 arrDish.add(dish);
                 System.out.println("Añadir otro plato?   1. Si     2. No");

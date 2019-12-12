@@ -91,7 +91,7 @@ public class frmNewAccount extends javax.swing.JFrame {
         txtPassword.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
 
         cmbUserType.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
-        cmbUserType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbUserType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Empleado", "Administrador", " " }));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/restaurantSystem/view/img/user.png"))); // NOI18N
 
@@ -234,10 +234,10 @@ public class frmNewAccount extends javax.swing.JFrame {
                 String name = txtName.getText();
                 String lastName = txtLastName.getText();
                 String userType = cmbUserType.getItemAt(cmbUserType.getSelectedIndex());
+                int id = AccountManager.assingId();
                 
-                Account account = new Account(userName, password, name, lastName, userType);
-                AccountManager accM = new AccountManager();
-                accM.addAccount(account);
+                Account account = new Account(id,userName, password, name, lastName, userType);
+                AccountManager.addAccount(account);
                 JOptionPane.showMessageDialog(this, "Registro correcto !");
                 frmMenu menu = new frmMenu();
                 menu.setVisible(true);

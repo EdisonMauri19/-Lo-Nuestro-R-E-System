@@ -10,19 +10,23 @@ package ec.edu.espe.restaurantSystem.model;
  * @author user
  */
 public class Account {
+    private int id;
     private String userName;
     private String password;
     private String name;
     private String lastName;
     private String userType;
 
-    public Account(String userName, String password, String name, String lastName, String userType) {
+    public Account(int id, String userName, String password, String name, String lastName, String userType) {
+        this.id = id;
         this.userName = userName;
         this.password = password;
         this.name = name;
         this.lastName = lastName;
         this.userType = userType;
     }
+
+    
 
     /**
      * @return the userName

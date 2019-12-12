@@ -5,6 +5,12 @@
  */
 package ec.edu.espe.restaurantSystem.view;
 
+import ec.edu.espe.restaurantSystem.controller.DishManager;
+import ec.edu.espe.restaurantSystem.controller.DrinkManager;
+import ec.edu.espe.restaurantSystem.model.*;
+import javax.swing.JOptionPane;
+
+
 /**
  *
  * @author user
@@ -16,6 +22,9 @@ public class frmDish extends javax.swing.JFrame {
      */
     public frmDish() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.cmbQuantity.setVisible(false);
+        this.lblQuantity.setVisible(false);
     }
 
     /**
@@ -31,54 +40,106 @@ public class frmDish extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jSpinner1 = new javax.swing.JSpinner();
+        txtName = new javax.swing.JTextField();
+        spiPrice = new javax.swing.JSpinner();
         jLabel4 = new javax.swing.JLabel();
         rbtMainCourse = new javax.swing.JRadioButton();
         rbtDessert = new javax.swing.JRadioButton();
         rbtDrink = new javax.swing.JRadioButton();
-        rbtCompanion = new javax.swing.JRadioButton();
-        jLabel5 = new javax.swing.JLabel();
-        lblPicture = new javax.swing.JLabel();
+        rbtExtra = new javax.swing.JRadioButton();
         btnAddDish = new javax.swing.JButton();
-        btnSearchPicture = new javax.swing.JButton();
+        rbtFirstDish = new javax.swing.JRadioButton();
+        lblQuantity = new javax.swing.JLabel();
+        cmbQuantity = new javax.swing.JComboBox<>();
+        btnExit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(800, 600));
+        setMinimumSize(new java.awt.Dimension(800, 600));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
         jLabel1.setText("Ingreso de Nuevo Plato");
 
+        jLabel2.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         jLabel2.setText("Nombre:");
 
+        jLabel3.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         jLabel3.setText("Precio:");
 
-        jSpinner1.setModel(new javax.swing.SpinnerNumberModel(1000.0f, null, null, 50.0f));
+        txtName.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
 
+        spiPrice.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
+        spiPrice.setModel(new javax.swing.SpinnerNumberModel(1.0f, null, null, 0.05f));
+
+        jLabel4.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         jLabel4.setText("Tipo:");
 
         gbtType.add(rbtMainCourse);
+        rbtMainCourse.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         rbtMainCourse.setText("Plato Fuerte");
+        rbtMainCourse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtMainCourseActionPerformed(evt);
+            }
+        });
 
         gbtType.add(rbtDessert);
+        rbtDessert.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         rbtDessert.setText("Postre");
+        rbtDessert.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtDessertActionPerformed(evt);
+            }
+        });
 
         gbtType.add(rbtDrink);
+        rbtDrink.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         rbtDrink.setText("Bebida");
+        rbtDrink.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtDrinkActionPerformed(evt);
+            }
+        });
 
-        gbtType.add(rbtCompanion);
-        rbtCompanion.setText("Acom.");
+        gbtType.add(rbtExtra);
+        rbtExtra.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
+        rbtExtra.setText("Extra");
+        rbtExtra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtExtraActionPerformed(evt);
+            }
+        });
 
-        jLabel5.setText("Foto:");
-
-        lblPicture.setBackground(new java.awt.Color(255, 255, 255));
-        lblPicture.setFont(new java.awt.Font("Tahoma", 2, 13)); // NOI18N
-        lblPicture.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblPicture.setText("Insertar Foto");
-        lblPicture.setBorder(javax.swing.BorderFactory.createCompoundBorder());
-
+        btnAddDish.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         btnAddDish.setText("Añadir");
+        btnAddDish.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddDishActionPerformed(evt);
+            }
+        });
 
-        btnSearchPicture.setText("Buscar");
+        gbtType.add(rbtFirstDish);
+        rbtFirstDish.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
+        rbtFirstDish.setText("Entrada");
+        rbtFirstDish.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtFirstDishActionPerformed(evt);
+            }
+        });
+
+        lblQuantity.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
+        lblQuantity.setText("Cantidad:");
+
+        cmbQuantity.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
+        cmbQuantity.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "350 ml", "500 ml", "750 ml", "1 L", "1.5 L", "2 L", "3 L" }));
+
+        btnExit.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
+        btnExit.setText("Regresar");
+        btnExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExitActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -87,73 +148,180 @@ public class frmDish extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(196, 196, 196)
+                        .addGap(193, 193, 193)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(71, 71, 71)
+                        .addGap(117, 117, 117)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3)
                             .addComponent(jLabel2)
-                            .addComponent(jLabel4))
+                            .addComponent(jLabel4)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(lblQuantity)
+                                .addComponent(jLabel3)))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(rbtMainCourse)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnAddDish)
+                                .addGap(166, 166, 166)
+                                .addComponent(btnExit))
+                            .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(rbtDessert)
-                            .addComponent(rbtDrink)
-                            .addComponent(rbtCompanion))
-                        .addGap(69, 69, 69)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(lblPicture, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(264, 264, 264)
-                        .addComponent(btnAddDish)))
-                .addContainerGap(45, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnSearchPicture)
-                .addGap(102, 102, 102))
+                            .addComponent(rbtExtra)
+                            .addComponent(rbtFirstDish)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(spiPrice, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(rbtMainCourse, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(cmbQuantity, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(rbtDrink, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                .addContainerGap(221, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(49, 49, 49)
+                .addGap(48, 48, 48)
                 .addComponent(jLabel1)
-                .addGap(33, 33, 33)
+                .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(spiPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(30, 30, 30)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(rbtMainCourse))
+                        .addComponent(rbtFirstDish)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rbtMainCourse)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(rbtDessert)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(rbtDrink)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rbtCompanion))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addComponent(lblPicture, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnSearchPicture)
-                .addGap(18, 18, 18)
-                .addComponent(btnAddDish, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
+                        .addComponent(rbtExtra)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblQuantity)
+                    .addComponent(cmbQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(46, 46, 46)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAddDish, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(99, 99, 99))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void rbtDrinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtDrinkActionPerformed
+        // TODO add your handling code here:
+        this.cmbQuantity.setVisible(true);
+        this.lblQuantity.setVisible(true);
+    }//GEN-LAST:event_rbtDrinkActionPerformed
+
+    private void rbtFirstDishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtFirstDishActionPerformed
+        // TODO add your handling code here:
+        this.cmbQuantity.setVisible(false);
+        this.lblQuantity.setVisible(false);
+    }//GEN-LAST:event_rbtFirstDishActionPerformed
+
+    private void rbtMainCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtMainCourseActionPerformed
+        // TODO add your handling code here:
+        this.cmbQuantity.setVisible(false);
+        this.lblQuantity.setVisible(false);
+    }//GEN-LAST:event_rbtMainCourseActionPerformed
+
+    private void rbtDessertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtDessertActionPerformed
+        // TODO add your handling code here:
+        this.cmbQuantity.setVisible(false);
+        this.lblQuantity.setVisible(false);
+    }//GEN-LAST:event_rbtDessertActionPerformed
+
+    private void rbtExtraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtExtraActionPerformed
+        // TODO add your handling code here:
+        this.cmbQuantity.setVisible(false);
+        this.lblQuantity.setVisible(false);
+    }//GEN-LAST:event_rbtExtraActionPerformed
+
+    private void btnAddDishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddDishActionPerformed
+        // TODO add your handling code here:
+        String type;
+        String name = this.txtName.getText();
+        float price = Float.parseFloat(this.spiPrice.getValue().toString());
+        if(rbtDrink.isSelected())
+        {
+            Drink product = new Drink();
+            int id = product.assingId();
+            product.setId(id);
+            product.setName(name);
+            product.setPrice(price);
+            product.setQuantity(getQuantity());
+            DrinkManager.addDrink(product);
+            JOptionPane.showMessageDialog(this,"Registro de plato exitoso" );
+            frmMenu menu = new frmMenu();
+            menu.setVisible(true);
+            this.setVisible(false);
+            
+        }else if(rbtDessert.isSelected()||rbtExtra.isSelected()||rbtFirstDish.isSelected()||rbtMainCourse.isSelected()){
+            Dish dish = new Dish();
+            int id = dish.assingId();
+            dish.setId(id);
+            dish.setName(name);
+            dish.setPrice(price);
+            dish.setType(getTypeDish());
+            DishManager.addDish(dish);
+            JOptionPane.showMessageDialog(this,"Registro de plato exitoso" );
+            frmMenu menu = new frmMenu();
+            menu.setVisible(true);
+            this.setVisible(false);
+        }
+    }//GEN-LAST:event_btnAddDishActionPerformed
+
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
+        // TODO add your handling code here:
+        int i = JOptionPane.showConfirmDialog(this, "Cancelar Registro?");
+            if(i == 0)
+            {
+                frmMenu menu = new frmMenu();
+                menu.setVisible(true);
+                this.setVisible(false);
+            }
+    }//GEN-LAST:event_btnExitActionPerformed
+
+    public int getQuantity()
+    {
+        int index = this.cmbQuantity.getSelectedIndex();
+        switch (index) {
+            case 0:
+                return 350;
+            case 1:
+                return 500;
+            case 2:
+                return 750;
+            case 3:
+                return 1000;
+            case 4:
+                return 1500;
+            case 5:
+                return 2000;
+            default:
+                return 3000;
+        }
+        
+    }
+    public String getTypeDish(){
+        if(rbtDessert.isSelected()){
+            return "Postre";
+        }else if(rbtExtra.isSelected()){
+            return "Extra";
+        }
+        else if(rbtFirstDish.isSelected()){
+            return "Entrada";
+        }else return "Plato Fuerte";
+    }
     /**
      * @param args the command line arguments
      */
@@ -191,19 +359,20 @@ public class frmDish extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddDish;
-    private javax.swing.JButton btnSearchPicture;
+    private javax.swing.JButton btnExit;
+    private javax.swing.JComboBox<String> cmbQuantity;
     private javax.swing.ButtonGroup gbtType;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JSpinner jSpinner1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JLabel lblPicture;
-    private javax.swing.JRadioButton rbtCompanion;
+    private javax.swing.JLabel lblQuantity;
     private javax.swing.JRadioButton rbtDessert;
     private javax.swing.JRadioButton rbtDrink;
+    private javax.swing.JRadioButton rbtExtra;
+    private javax.swing.JRadioButton rbtFirstDish;
     private javax.swing.JRadioButton rbtMainCourse;
+    private javax.swing.JSpinner spiPrice;
+    private javax.swing.JTextField txtName;
     // End of variables declaration//GEN-END:variables
 }

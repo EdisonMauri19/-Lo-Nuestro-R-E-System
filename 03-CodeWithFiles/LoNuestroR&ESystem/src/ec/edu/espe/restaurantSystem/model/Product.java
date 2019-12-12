@@ -5,18 +5,15 @@
  */
 package ec.edu.espe.restaurantSystem.model;
 
-import java.util.ArrayList;
-import java.util.Scanner;
 
 /**
  *
  * @author user
  */
-public class Product {
+public abstract class Product {
     private int id;
     private String nameDish;
     private float price;
-    private ArrayList<Ingredient> ingredients = new ArrayList<Ingredient>(); 
     
 
     public Product() {
@@ -78,6 +75,8 @@ public class Product {
     public String toString() {
         return id + ";"+nameDish + ";" + price;
     }
+    
+    public abstract int assingId();
     
     
 }

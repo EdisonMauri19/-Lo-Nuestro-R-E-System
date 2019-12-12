@@ -18,7 +18,6 @@ public class PasswordLibrary {
         for (int i = password.length()-1 ; i >= 0 ; i--) {
             passInv = passInv +password.charAt(i);
         }
-        System.out.println(passInv);
         
         for (int i = 0; i < password.length(); i++) {
             int value = passInv.codePointAt(i);

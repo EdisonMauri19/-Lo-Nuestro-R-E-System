@@ -9,39 +9,39 @@ import com.google.gson.Gson;
 import ec.edu.espe.restaurantSystem.lib.FileLibrary;
 import ec.edu.espe.restaurantSystem.lib.PasswordLibrary;
 import ec.edu.espe.restaurantSystem.model.Account;
+import java.io.File;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 /**
  *
  * @author camyt
  */
 public class AccountManager {
-    private Gson gson;
-    public void addAccount(Account account){
+    private static Gson gson = new Gson();
+    public static void addAccount(Account account){
         String password;
-        password = PasswordLibrary.decryptPass(account.getPassword());
+        password = PasswordLibrary.encryptPass(account.getPassword());
         account.setPassword(password);
         FileLibrary.addToFile(account);
         
     }
-    public ArrayList<Account> readAccount(){
+    public static ArrayList<Account> readAccount(){
         ArrayList<Object> object;
         ArrayList<Account> accounts = new ArrayList<Account>();
         object = FileLibrary.readObjects(Account.class.getSimpleName());
-        System.out.println(Arrays.toString(object.toArray())+"papa");
         for (int i = 0; i < object.size(); i++) {
             Account account;
-            String jsonAccount = gson.toJson(object.get(i));
-            System.out.println(jsonAccount+"papa2");
-            account = gson.fromJson(jsonAccount, Account.class);
+            Object objectJ;
+            objectJ = object.get(i);
+            String jAccount = gson.toJson(objectJ);
+            account = gson.fromJson(jAccount, Account.class);
             accounts.add(account);
             
         }
         return accounts;
          
     }
-    public Account valAccount(String userName, String password){
+    public static Account valAccount(String userName, String password){
       ArrayList<Account> accounts;
       accounts = readAccount();
       Account account = null;
@@ -53,6 +53,18 @@ public class AccountManager {
         }
         return account;
       
+    }
+    
+    public static int assingId(){
+        ArrayList<Account> accounts;
+        File f = new File("Account.json");
+        if(f.exists())
+        {
+            accounts = readAccount();
+            return accounts.size()+1;
+        }else return 1;
+        
+        
     }
     
 }
