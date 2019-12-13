@@ -3,9 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ec.edu.espe.antsystem.view;
-
-import ec.edu.espe.restaurantSystem.view.FrmMenu;
+package ec.edu.espe.restaurantSystem.view;
 
 /**
  *
@@ -18,6 +16,7 @@ public class FrmOrder extends javax.swing.JFrame {
      */
     public FrmOrder() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -67,22 +66,32 @@ public class FrmOrder extends javax.swing.JFrame {
         jLabel4.setText("jLabel4");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(600, 800));
+        setMaximumSize(new java.awt.Dimension(800, 600));
+        setMinimumSize(new java.awt.Dimension(800, 600));
+        setUndecorated(true);
 
+        jLabel1.setFont(new java.awt.Font("Trebuchet MS", 0, 24)); // NOI18N
         jLabel1.setText("Ingreso de Nueva Orden");
 
+        jLabel2.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
         jLabel2.setText("Nombre");
 
+        lblId.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
         lblId.setText("C.I");
 
+        lblDate.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
         lblDate.setText("Fecha");
 
+        jTextField1.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
         jTextField1.setToolTipText("Ingrese nombre del cliente");
 
+        jTextField2.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
         jTextField2.setToolTipText("Ingrese la cedula del cliente");
 
+        lblMenu.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
         lblMenu.setText("Menu");
 
+        tblMenuOrder.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
         tblMenuOrder.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -97,6 +106,7 @@ public class FrmOrder extends javax.swing.JFrame {
         tblMenuOrder.setToolTipText("Tabla de ordenes");
         jScrollPane2.setViewportView(tblMenuOrder);
 
+        tblMenu.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
         tblMenu.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -112,12 +122,15 @@ public class FrmOrder extends javax.swing.JFrame {
         jScrollPane3.setViewportView(tblMenu);
 
         buttonGroup1.add(rbtFirstDish);
+        rbtFirstDish.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
         rbtFirstDish.setText("Entrada");
 
         buttonGroup1.add(rbtSecondDish);
+        rbtSecondDish.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
         rbtSecondDish.setText("Fuerte");
 
         buttonGroup1.add(rbtDessert);
+        rbtDessert.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
         rbtDessert.setText("Postre");
         rbtDessert.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -126,11 +139,14 @@ public class FrmOrder extends javax.swing.JFrame {
         });
 
         buttonGroup1.add(rbtDrink);
+        rbtDrink.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
         rbtDrink.setText("Bebida");
 
         buttonGroup1.add(rbtExtra);
+        rbtExtra.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
         rbtExtra.setText("Extra");
 
+        btnBack.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
         btnBack.setText("Regresar");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -143,77 +159,78 @@ public class FrmOrder extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(290, 290, 290)
-                .addComponent(jLabel1)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(42, 42, 42)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblId)
                             .addComponent(jLabel2)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(lblMenu)
-                                .addComponent(lblDate)))
+                            .addComponent(lblId)
+                            .addComponent(lblDate))
+                        .addGap(154, 154, 154)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(25, 25, 25)
-                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(154, 154, 154)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
-                                    .addComponent(jTextField1)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(48, 48, 48)
-                                .addComponent(rbtFirstDish)
-                                .addGap(18, 18, 18)
-                                .addComponent(rbtSecondDish)
-                                .addGap(18, 18, 18)
-                                .addComponent(rbtDessert)
-                                .addGap(18, 18, 18)
-                                .addComponent(rbtDrink)
-                                .addGap(18, 18, 18)
-                                .addComponent(rbtExtra))))
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(96, 96, 96)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
+                        .addGap(45, 45, 45)
+                        .addComponent(lblMenu)
+                        .addGap(94, 94, 94)
+                        .addComponent(rbtFirstDish)
+                        .addGap(17, 17, 17)
+                        .addComponent(rbtSecondDish)
+                        .addGap(13, 13, 13)
+                        .addComponent(rbtDessert)
+                        .addGap(25, 25, 25)
+                        .addComponent(rbtDrink)
+                        .addGap(13, 13, 13)
+                        .addComponent(rbtExtra))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(190, 190, 190)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
                         .addComponent(btnBack)))
-                .addContainerGap(172, Short.MAX_VALUE))
+                .addContainerGap(68, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
+                .addGap(30, 30, 30)
                 .addComponent(jLabel1)
-                .addGap(35, 35, 35)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblId))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblDate)
-                        .addGap(25, 25, 25)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblMenu)
-                            .addComponent(rbtFirstDish)
-                            .addComponent(rbtSecondDish)
-                            .addComponent(rbtDessert)
-                            .addComponent(rbtDrink)
-                            .addComponent(rbtExtra))
-                        .addGap(31, 31, 31)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 200, Short.MAX_VALUE)
+                        .addGap(3, 3, 3)
+                        .addComponent(jLabel2)
+                        .addGap(21, 21, 21)
+                        .addComponent(lblId)
+                        .addGap(24, 24, 24)
+                        .addComponent(lblDate))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblMenu)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(rbtFirstDish, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(rbtSecondDish, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(rbtDessert, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(rbtDrink, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(rbtExtra, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(30, 30, 30)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(90, 90, 90)
                 .addComponent(btnBack)
-                .addContainerGap())
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         pack();

@@ -2,7 +2,6 @@ package ec.edu.espe.restaurantSystem.view;
 
 import ec.edu.espe.restaurantSystem.controller.AccountManager;
 import ec.edu.espe.restaurantSystem.model.Account;
-import ec.edu.espe.restaurantSystem.view.FrmMenu;
 import javax.swing.JOptionPane;
 
 /*
@@ -43,28 +42,29 @@ public class FrmLogin extends javax.swing.JFrame {
         btnLogin = new javax.swing.JButton();
         txtUserName = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
+        setUndecorated(true);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel4.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
-        jLabel4.setText("Inicio de sesion");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(177, 120, 290, 64));
+        jLabel4.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        jLabel4.setText("Inicio de Sesión");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 160, 180, 64));
 
         jLabel5.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        jLabel5.setText("Usuario: ");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 210, -1, -1));
+        jLabel5.setText("Usuario:");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        jLabel6.setText("Contraseña: ");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, -1, 22));
+        jLabel6.setText("Contraseña:");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 340, -1, 22));
 
-        txtPassword.setToolTipText("Ingrese contraseña");
-        jPanel1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 280, 160, 30));
+        txtPassword.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
+        jPanel1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 330, 160, 30));
 
         btnLogin.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         btnLogin.setText("Ingresar");
@@ -73,13 +73,28 @@ public class FrmLogin extends javax.swing.JFrame {
                 btnLoginActionPerformed(evt);
             }
         });
-        jPanel1.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 360, 109, 47));
+        jPanel1.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 420, 109, 47));
 
-        txtUserName.setToolTipText("Ingrese usuario");
-        jPanel1.add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 210, 160, 30));
+        txtUserName.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
+        jPanel1.add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 260, 160, 30));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/restaurantSystem/view/img/user.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 180, -1, 180));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 230, -1, 180));
+
+        jLabel7.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
+        jLabel7.setText("Lo Nuestro R&E System");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, 390, 64));
+
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel2.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 1, 36)); // NOI18N
+        jLabel2.setText("X");
+        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 40, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -113,6 +128,14 @@ public class FrmLogin extends javax.swing.JFrame {
             txtPassword.setFocusable(true);
         }
     }//GEN-LAST:event_btnLoginActionPerformed
+
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        // TODO add your handling code here:
+        int index = JOptionPane.showConfirmDialog(this, "Salir del Programa?");
+        if (index == 0) {
+            System.exit(0);
+        }
+    }//GEN-LAST:event_jLabel2MouseClicked
 
     /**
      * @param args the command line arguments
@@ -155,9 +178,11 @@ public class FrmLogin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLogin;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtUserName;

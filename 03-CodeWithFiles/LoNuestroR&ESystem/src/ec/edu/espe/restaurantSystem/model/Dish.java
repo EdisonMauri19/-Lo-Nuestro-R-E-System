@@ -8,6 +8,8 @@ package ec.edu.espe.restaurantSystem.model;
 import ec.edu.espe.restaurantSystem.controller.DishManager;
 import java.io.File;
 import java.util.ArrayList;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -47,6 +49,30 @@ public class Dish extends Product {
             dishes = DishManager.readDishes();
             return dishes.size()+1;
         }else return 1;
+    }
+
+    @Override
+    public void showProducts(JTable table, String type) {
+        DefaultTableModel modeloT = new DefaultTableModel();
+        ArrayList<Dish> dishes;
+        dishes = DishManager.readDishes();
+        
+        table.setModel(modeloT);
+        modeloT.addColumn("Número");
+        modeloT.addColumn("Nombre");
+        modeloT.addColumn("Precio");
+        Object [] columna = new Object[3];
+        
+            for (int i = 0; i < dishes.size(); i++) {
+                Dish dish = dishes.get(i);
+                if(dish.getType().equals(type))
+                {
+                    columna[0]= dish.getId();
+                    columna[1]= dish.getName();
+                    columna[2] = dish.getPrice()+ "$";
+                }
+                modeloT.addRow(columna);
+            }
     }
     
     

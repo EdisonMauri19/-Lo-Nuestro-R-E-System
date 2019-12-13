@@ -5,6 +5,8 @@
  */
 package ec.edu.espe.restaurantSystem.model;
 
+import javax.swing.JTable;
+
 
 /**
  *
@@ -77,6 +79,7 @@ public abstract class Product {
     }
     
     public abstract int assingId();
+    public abstract void showProducts(JTable table, String type);
     
     
 }

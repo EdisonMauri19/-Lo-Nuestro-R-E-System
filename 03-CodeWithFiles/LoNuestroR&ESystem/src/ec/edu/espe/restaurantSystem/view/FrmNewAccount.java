@@ -51,8 +51,7 @@ public class FrmNewAccount extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
-
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        setUndecorated(true);
 
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         jLabel1.setText("Registro Nuevo Usuario");

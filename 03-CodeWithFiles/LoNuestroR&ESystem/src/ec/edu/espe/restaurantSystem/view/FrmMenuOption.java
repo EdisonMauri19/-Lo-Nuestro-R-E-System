@@ -5,6 +5,8 @@
  */
 package ec.edu.espe.restaurantSystem.view;
 
+import ec.edu.espe.restaurantSystem.model.*;
+
 /**
  *
  * @author camyt
@@ -17,6 +19,9 @@ public class FrmMenuOption extends javax.swing.JFrame {
     public FrmMenuOption() {
         initComponents();
         this.setLocationRelativeTo(null);
+        this.lblExtra.setVisible(false);
+        this.lblName.setVisible(false);
+        this.lblPrice.setVisible(false);
     }
 
     /**
@@ -39,27 +44,55 @@ public class FrmMenuOption extends javax.swing.JFrame {
         rbtSecondDish = new javax.swing.JRadioButton();
         rbtDessert = new javax.swing.JRadioButton();
         rbtDrink = new javax.swing.JRadioButton();
+        lblName = new javax.swing.JLabel();
+        lblExtra = new javax.swing.JLabel();
+        lblPrice = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(800, 600));
+        setMinimumSize(new java.awt.Dimension(800, 600));
+        setUndecorated(true);
 
         gbtDishTipe.add(rbtExtra);
+        rbtExtra.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         rbtExtra.setText("Extras");
+        rbtExtra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtExtraActionPerformed(evt);
+            }
+        });
 
+        tblMenuOp.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         tblMenuOp.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Nombre", "Precio"
+                "N", "Nombre", "Precio"
             }
         ));
-        tblMenuOp.setToolTipText("Tabla de menu");
         jScrollPane1.setViewportView(tblMenuOp);
 
+        jButton1.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jButton1.setText("Regresar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,63 +104,110 @@ public class FrmMenuOption extends javax.swing.JFrame {
         jLabel1.setText("MENU");
 
         gbtDishTipe.add(rbtFirstDish);
-        rbtFirstDish.setText("Entrada");
+        rbtFirstDish.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        rbtFirstDish.setText("Entradas");
+        rbtFirstDish.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtFirstDishActionPerformed(evt);
+            }
+        });
 
         gbtDishTipe.add(rbtSecondDish);
-        rbtSecondDish.setText("Plato Fuerte");
+        rbtSecondDish.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        rbtSecondDish.setText("Platos Fuerte");
+        rbtSecondDish.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtSecondDishActionPerformed(evt);
+            }
+        });
 
         gbtDishTipe.add(rbtDessert);
+        rbtDessert.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         rbtDessert.setText("Postres");
+        rbtDessert.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtDessertActionPerformed(evt);
+            }
+        });
 
         gbtDishTipe.add(rbtDrink);
+        rbtDrink.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         rbtDrink.setText("Bebidas");
+        rbtDrink.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtDrinkActionPerformed(evt);
+            }
+        });
+
+        lblName.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
+        lblName.setText("Nombre:");
+
+        lblExtra.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
+        lblExtra.setText("Extra:");
+
+        lblPrice.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
+        lblPrice.setText("Precio:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(23, 23, 23))
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(rbtFirstDish)
+                        .addGap(18, 18, 18)
+                        .addComponent(rbtSecondDish)
+                        .addGap(18, 18, 18)
+                        .addComponent(rbtDessert)
+                        .addGap(29, 29, 29)
+                        .addComponent(rbtDrink)
+                        .addGap(18, 18, 18)
+                        .addComponent(rbtExtra))
+                    .addComponent(jLabel1)
+                    .addComponent(jScrollPane1))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(118, 118, 118)
+                        .addGap(29, 29, 29)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 481, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(rbtFirstDish)
-                                .addGap(18, 18, 18)
-                                .addComponent(rbtSecondDish)
-                                .addGap(18, 18, 18)
-                                .addComponent(rbtDessert)
-                                .addGap(29, 29, 29)
-                                .addComponent(rbtDrink)
-                                .addGap(18, 18, 18)
-                                .addComponent(rbtExtra)))))
-                .addGap(78, 176, Short.MAX_VALUE))
+                            .addComponent(lblExtra)
+                            .addComponent(lblName)
+                            .addComponent(lblPrice))
+                        .addContainerGap(186, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(61, 61, 61))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addComponent(jLabel1)
+                        .addGap(34, 34, 34)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(rbtFirstDish)
+                            .addComponent(rbtSecondDish)
+                            .addComponent(rbtDrink)
+                            .addComponent(rbtExtra)
+                            .addComponent(rbtDessert))
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(205, 205, 205)
+                        .addComponent(lblName)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblPrice)
+                        .addGap(13, 13, 13)
+                        .addComponent(lblExtra)))
+                .addContainerGap(77, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(57, 57, 57)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(rbtFirstDish)
-                    .addComponent(rbtSecondDish)
-                    .addComponent(rbtDrink)
-                    .addComponent(rbtExtra)
-                    .addComponent(rbtDessert))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addContainerGap())
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -150,6 +230,37 @@ public class FrmMenuOption extends javax.swing.JFrame {
         frmmenu.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void rbtFirstDishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtFirstDishActionPerformed
+        // TODO add your handling code here:
+        Dish dish = new Dish();
+        dish.showProducts(tblMenuOp, "Entrada");
+        
+    }//GEN-LAST:event_rbtFirstDishActionPerformed
+
+    private void rbtSecondDishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtSecondDishActionPerformed
+        // TODO add your handling code here:
+        Dish dish = new Dish();
+        dish.showProducts(tblMenuOp, "Plato Fuerte");
+    }//GEN-LAST:event_rbtSecondDishActionPerformed
+
+    private void rbtDessertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtDessertActionPerformed
+        // TODO add your handling code here:
+        Dish dish = new Dish();
+        dish.showProducts(tblMenuOp, "Postre");
+    }//GEN-LAST:event_rbtDessertActionPerformed
+
+    private void rbtExtraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtExtraActionPerformed
+        // TODO add your handling code here:
+        Dish dish = new Dish();
+        dish.showProducts(tblMenuOp, "Extra");
+    }//GEN-LAST:event_rbtExtraActionPerformed
+
+    private void rbtDrinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtDrinkActionPerformed
+        // TODO add your handling code here:
+        Dish dish = new Dish();
+        dish.showProducts(tblMenuOp, "");
+    }//GEN-LAST:event_rbtDrinkActionPerformed
 
     /**
      * @param args the command line arguments
@@ -181,9 +292,11 @@ public class FrmMenuOption extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            
+
+            @Override
             public void run() {
-                new FrmMenuOption().setVisible(true);
-            }
+new FrmMenuOption().setVisible(true);            }
         });
     }
 
@@ -193,6 +306,9 @@ public class FrmMenuOption extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblExtra;
+    private javax.swing.JLabel lblName;
+    private javax.swing.JLabel lblPrice;
     private javax.swing.JRadioButton rbtDessert;
     private javax.swing.JRadioButton rbtDrink;
     private javax.swing.JRadioButton rbtExtra;
