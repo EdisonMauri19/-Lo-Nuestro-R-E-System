@@ -9,12 +9,12 @@ package ec.edu.espe.restaurantSystem.view;
  *
  * @author camyt
  */
-public class frmMenuOption extends javax.swing.JFrame {
+public class FrmMenuOption extends javax.swing.JFrame {
 
     /**
      * Creates new form frmMenuOption
      */
-    public frmMenuOption() {
+    public FrmMenuOption() {
         initComponents();
         this.setLocationRelativeTo(null);
     }
@@ -57,6 +57,7 @@ public class frmMenuOption extends javax.swing.JFrame {
                 "Nombre", "Precio"
             }
         ));
+        tblMenuOp.setToolTipText("Tabla de menu");
         jScrollPane1.setViewportView(tblMenuOp);
 
         jButton1.setText("Regresar");
@@ -145,7 +146,7 @@ public class frmMenuOption extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        frmMenu frmmenu = new frmMenu();
+        FrmMenu frmmenu = new FrmMenu();
         frmmenu.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -167,20 +168,21 @@ public class frmMenuOption extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmMenuOption.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmMenuOption.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmMenuOption.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmMenuOption.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmMenuOption.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmMenuOption.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmMenuOption.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmMenuOption.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmMenuOption().setVisible(true);
+                new FrmMenuOption().setVisible(true);
             }
         });
     }

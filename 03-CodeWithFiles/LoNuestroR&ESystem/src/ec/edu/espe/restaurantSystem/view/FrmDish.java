@@ -15,12 +15,12 @@ import javax.swing.JOptionPane;
  *
  * @author user
  */
-public class frmDish extends javax.swing.JFrame {
+public class FrmDish extends javax.swing.JFrame {
 
     /**
      * Creates new form frmDish
      */
-    public frmDish() {
+    public FrmDish() {
         initComponents();
         this.setLocationRelativeTo(null);
         this.cmbQuantity.setVisible(false);
@@ -67,9 +67,16 @@ public class frmDish extends javax.swing.JFrame {
         jLabel3.setText("Precio:");
 
         txtName.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
+        txtName.setToolTipText("Ingrese nombre del plato");
+        txtName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNameActionPerformed(evt);
+            }
+        });
 
         spiPrice.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         spiPrice.setModel(new javax.swing.SpinnerNumberModel(1.0f, null, null, 0.05f));
+        spiPrice.setToolTipText("Cantidad");
 
         jLabel4.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         jLabel4.setText("Tipo:");
@@ -261,7 +268,7 @@ public class frmDish extends javax.swing.JFrame {
             product.setQuantity(getQuantity());
             DrinkManager.addDrink(product);
             JOptionPane.showMessageDialog(this,"Registro de plato exitoso" );
-            frmMenu menu = new frmMenu();
+            FrmMenu menu = new FrmMenu();
             menu.setVisible(true);
             this.setVisible(false);
             
@@ -274,7 +281,7 @@ public class frmDish extends javax.swing.JFrame {
             dish.setType(getTypeDish());
             DishManager.addDish(dish);
             JOptionPane.showMessageDialog(this,"Registro de plato exitoso" );
-            frmMenu menu = new frmMenu();
+            FrmMenu menu = new FrmMenu();
             menu.setVisible(true);
             this.setVisible(false);
         }
@@ -285,11 +292,15 @@ public class frmDish extends javax.swing.JFrame {
         int i = JOptionPane.showConfirmDialog(this, "Cancelar Registro?");
             if(i == 0)
             {
-                frmMenu menu = new frmMenu();
+                FrmMenu menu = new FrmMenu();
                 menu.setVisible(true);
                 this.setVisible(false);
             }
     }//GEN-LAST:event_btnExitActionPerformed
+
+    private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNameActionPerformed
 
     public int getQuantity()
     {
@@ -339,20 +350,21 @@ public class frmDish extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmDish.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmDish.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmDish.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmDish.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmDish.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmDish.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmDish.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmDish.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmDish().setVisible(true);
+                new FrmDish().setVisible(true);
             }
         });
     }

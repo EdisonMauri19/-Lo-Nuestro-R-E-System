@@ -9,12 +9,12 @@ package ec.edu.espe.restaurantSystem.view;
  *
  * @author camyt
  */
-public class frmScheduleEvent extends javax.swing.JFrame {
+public class FrmScheduleEvent extends javax.swing.JFrame {
 
     /**
      * Creates new form frmScheduleEvent
      */
-    public frmScheduleEvent() {
+    public FrmScheduleEvent() {
         initComponents();
     }
 
@@ -54,8 +54,14 @@ public class frmScheduleEvent extends javax.swing.JFrame {
 
         rbtExtra.setText("Extras");
 
-        jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        txtName.setToolTipText("Ingresar nombre del cliente");
+
+        txtdni.setToolTipText("Ingresar cedula del cliente");
+
+        jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel1.setText("Agendar Evento");
+
+        txtPhone.setToolTipText("Ingresar telefono del cliente");
 
         tblMenu.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -68,9 +74,12 @@ public class frmScheduleEvent extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tblMenu.setToolTipText("");
         jScrollPane1.setViewportView(tblMenu);
 
         jLabel2.setText("Nombre del cliente: ");
+
+        spiPeople.setToolTipText("Cantidad");
 
         btnBack.setText("Regresar");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -82,6 +91,7 @@ public class frmScheduleEvent extends javax.swing.JFrame {
         jLabel3.setText("Tipo de evento");
 
         cmbType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Fiesta Infantil", "" }));
+        cmbType.setToolTipText("Lista de tipo de evento");
 
         jLabel4.setText("Cantidad de personas: ");
 
@@ -198,7 +208,7 @@ public class frmScheduleEvent extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnBack))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                         .addComponent(jLabel4)
                         .addGap(30, 30, 30)
                         .addComponent(spiPeople, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -234,7 +244,7 @@ public class frmScheduleEvent extends javax.swing.JFrame {
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
-        frmMenu menu = new frmMenu();
+        FrmMenu menu = new FrmMenu();
         menu.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnBackActionPerformed
@@ -256,20 +266,21 @@ public class frmScheduleEvent extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmScheduleEvent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmScheduleEvent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmScheduleEvent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmScheduleEvent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmScheduleEvent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmScheduleEvent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmScheduleEvent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmScheduleEvent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmScheduleEvent().setVisible(true);
+                new FrmScheduleEvent().setVisible(true);
             }
         });
     }

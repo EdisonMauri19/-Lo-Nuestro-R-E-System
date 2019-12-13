@@ -9,12 +9,12 @@ package ec.edu.espe.restaurantSystem.view;
  *
  * @author Jerico Ruiz
  */
-public class frmEvent extends javax.swing.JFrame {
+public class FrmEvent extends javax.swing.JFrame {
 
     /**
      * Creates new form frmEvents
      */
-    public frmEvent() {
+    public FrmEvent() {
         initComponents();
     }
 
@@ -52,6 +52,7 @@ public class frmEvent extends javax.swing.JFrame {
         setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
 
+        jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
         jLabel2.setText("Ingreso de Nuevo Evento");
 
         lblCategoryEvent.setText("Categoria del Evento");
@@ -61,8 +62,12 @@ public class frmEvent extends javax.swing.JFrame {
         lblDate.setText("Fecha");
 
         cmbType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Fiesta Infantil", "Fiesta 15 Años", "Boda", "Aniversario", "Fiesta - Baile", "Meeting" }));
+        cmbType.setToolTipText("Lista de tipo de evento");
 
         spiPeople.setModel(new javax.swing.SpinnerNumberModel(0, null, 500, 1));
+        spiPeople.setToolTipText("Cantidad de personas");
+
+        dchDate.setToolTipText("Fecha del evento");
 
         lblMenu.setText("Menú");
 
@@ -88,6 +93,7 @@ public class frmEvent extends javax.swing.JFrame {
                 "Nombre", "Precio"
             }
         ));
+        tblMenu.setToolTipText("Tabla de menu");
         jScrollPane1.setViewportView(tblMenu);
 
         buttonGroup1.add(rbtThirdDish);
@@ -104,6 +110,7 @@ public class frmEvent extends javax.swing.JFrame {
                 "Nombre"
             }
         ));
+        tblMenuEvent.setToolTipText("Tabla de eventos");
         jScrollPane2.setViewportView(tblMenuEvent);
 
         btnAddEvent.setText("Agregar");
@@ -141,7 +148,7 @@ public class frmEvent extends javax.swing.JFrame {
                                     .addComponent(dchDate, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(spiPeople, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(cmbType, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(30, 30, 30)
@@ -242,21 +249,23 @@ public class frmEvent extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmEvent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmEvent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmEvent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmEvent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmEvent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmEvent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmEvent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmEvent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmEvent().setVisible(true);
+                new FrmEvent().setVisible(true);
             }
         });
     }

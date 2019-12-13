@@ -2,7 +2,7 @@ package ec.edu.espe.restaurantSystem.view;
 
 import ec.edu.espe.restaurantSystem.controller.AccountManager;
 import ec.edu.espe.restaurantSystem.model.Account;
-import ec.edu.espe.restaurantSystem.view.frmMenu;
+import ec.edu.espe.restaurantSystem.view.FrmMenu;
 import javax.swing.JOptionPane;
 
 /*
@@ -15,12 +15,12 @@ import javax.swing.JOptionPane;
  *
  * @author user
  */
-public class frmLogin extends javax.swing.JFrame {
+public class FrmLogin extends javax.swing.JFrame {
 
     /**
      * Creates new form frmLogin
      */
-    public frmLogin() {
+    public FrmLogin() {
         initComponents();
         this.setLocationRelativeTo(null);
         
@@ -52,26 +52,30 @@ public class frmLogin extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel4.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
-        jLabel4.setText("Login");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 120, 147, 64));
+        jLabel4.setText("Inicio de sesion");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(177, 120, 290, 64));
 
         jLabel5.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        jLabel5.setText("Username:");
+        jLabel5.setText("Usuario: ");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 210, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        jLabel6.setText("Password:");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 280, -1, 22));
+        jLabel6.setText("Contraseña: ");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, -1, 22));
+
+        txtPassword.setToolTipText("Ingrese contraseña");
         jPanel1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 280, 160, 30));
 
         btnLogin.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        btnLogin.setText("Login");
+        btnLogin.setText("Ingresar");
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLoginActionPerformed(evt);
             }
         });
         jPanel1.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 360, 109, 47));
+
+        txtUserName.setToolTipText("Ingrese usuario");
         jPanel1.add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 210, 160, 30));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/restaurantSystem/view/img/user.png"))); // NOI18N
@@ -100,7 +104,7 @@ public class frmLogin extends javax.swing.JFrame {
         account  = accountM.valAccount(userName, password);
         if(account != null){
             JOptionPane.showMessageDialog(this, "Ingreso correcto!");
-            frmMenu menu = new frmMenu();
+            FrmMenu menu = new FrmMenu();
             menu.setVisible(true);
             this.setVisible(false);
         }else{
@@ -127,21 +131,23 @@ public class frmLogin extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmLogin().setVisible(true);
+                new FrmLogin().setVisible(true);
             }
         });
     }

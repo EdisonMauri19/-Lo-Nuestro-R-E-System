@@ -13,12 +13,12 @@ import java.util.logging.Logger;
  *
  * @author user
  */
-public class frmSplashScreen extends javax.swing.JFrame implements Runnable{
+public class FrmSplashScreen extends javax.swing.JFrame implements Runnable{
     private Thread time = null;
     /**
      * Creates new form frmSplashScreen
      */
-    public frmSplashScreen() {
+    public FrmSplashScreen() {
         initComponents();
         this.setLocationRelativeTo(null);
         AWTUtilities.setWindowOpaque(this, false);
@@ -102,20 +102,21 @@ public class frmSplashScreen extends javax.swing.JFrame implements Runnable{
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmSplashScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmSplashScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmSplashScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmSplashScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmSplashScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmSplashScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmSplashScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmSplashScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmSplashScreen().setVisible(true);
+                new FrmSplashScreen().setVisible(true);
             }
         });
     }
@@ -133,13 +134,13 @@ public class frmSplashScreen extends javax.swing.JFrame implements Runnable{
             try {
                 Thread.sleep(5000);
                 this.setVisible(false);
-                frmLogin login = new frmLogin();
+                FrmLogin login = new FrmLogin();
                 login.setVisible(true);
                 break;
                 
                 
             } catch (InterruptedException ex) {
-                Logger.getLogger(frmSplashScreen.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(FrmSplashScreen.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }

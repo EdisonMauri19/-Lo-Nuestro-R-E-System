@@ -172,8 +172,14 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextField1">
+      <Properties>
+        <Property name="toolTipText" type="java.lang.String" value="Ingrese nombre del cliente"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextField2">
+      <Properties>
+        <Property name="toolTipText" type="java.lang.String" value="Ingrese la cedula del cliente"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblMenu">
       <Properties>
@@ -197,6 +203,7 @@
                 <Column editable="true" title="Title 4" type="java.lang.Object"/>
               </Table>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="Tabla de ordenes"/>
           </Properties>
         </Component>
       </SubComponents>
@@ -218,6 +225,7 @@
                 <Column editable="true" title="Title 4" type="java.lang.Object"/>
               </Table>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="Tabla de menu"/>
           </Properties>
         </Component>
       </SubComponents>

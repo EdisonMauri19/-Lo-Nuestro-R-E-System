@@ -5,18 +5,18 @@
  */
 package ec.edu.espe.antsystem.view;
 
-import ec.edu.espe.restaurantSystem.view.frmMenu;
+import ec.edu.espe.restaurantSystem.view.FrmMenu;
 
 /**
  *
  * @author Jerico Ruiz
  */
-public class frmOrder extends javax.swing.JFrame {
+public class FrmOrder extends javax.swing.JFrame {
 
     /**
      * Creates new form frmOrder
      */
-    public frmOrder() {
+    public FrmOrder() {
         initComponents();
     }
 
@@ -77,6 +77,10 @@ public class frmOrder extends javax.swing.JFrame {
 
         lblDate.setText("Fecha");
 
+        jTextField1.setToolTipText("Ingrese nombre del cliente");
+
+        jTextField2.setToolTipText("Ingrese la cedula del cliente");
+
         lblMenu.setText("Menu");
 
         tblMenuOrder.setModel(new javax.swing.table.DefaultTableModel(
@@ -90,6 +94,7 @@ public class frmOrder extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tblMenuOrder.setToolTipText("Tabla de ordenes");
         jScrollPane2.setViewportView(tblMenuOrder);
 
         tblMenu.setModel(new javax.swing.table.DefaultTableModel(
@@ -103,6 +108,7 @@ public class frmOrder extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tblMenu.setToolTipText("Tabla de menu");
         jScrollPane3.setViewportView(tblMenu);
 
         buttonGroup1.add(rbtFirstDish);
@@ -219,7 +225,7 @@ public class frmOrder extends javax.swing.JFrame {
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
-        frmMenu menu = new frmMenu();
+        FrmMenu menu = new FrmMenu();
         menu.setVisible(true);
         this.setVisible(false);
         
@@ -242,20 +248,21 @@ public class frmOrder extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmOrder.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmOrder.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmOrder.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmOrder.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmOrder.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmOrder.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmOrder.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmOrder.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmOrder().setVisible(true);
+                new FrmOrder().setVisible(true);
             }
         });
     }

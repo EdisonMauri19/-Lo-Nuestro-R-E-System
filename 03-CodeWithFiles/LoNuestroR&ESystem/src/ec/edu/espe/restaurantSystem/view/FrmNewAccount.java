@@ -13,12 +13,12 @@ import javax.swing.JOptionPane;
  *
  * @author user
  */
-public class frmNewAccount extends javax.swing.JFrame {
+public class FrmNewAccount extends javax.swing.JFrame {
 
     /**
      * Creates new form frmNewUser
      */
-    public frmNewAccount() {
+    public FrmNewAccount() {
         initComponents();
         this.setLocationRelativeTo(null);
     }
@@ -73,8 +73,10 @@ public class frmNewAccount extends javax.swing.JFrame {
         jLabel6.setText("Tipo de Usuario:");
 
         txtUserName.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
+        txtUserName.setToolTipText("Ingrese nombre de usuario");
 
         txtName.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
+        txtName.setToolTipText("Ingrese su nombre");
         txtName.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtNameKeyTyped(evt);
@@ -82,6 +84,7 @@ public class frmNewAccount extends javax.swing.JFrame {
         });
 
         txtLastName.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
+        txtLastName.setToolTipText("Ingrese su apellido");
         txtLastName.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtLastNameKeyTyped(evt);
@@ -89,9 +92,11 @@ public class frmNewAccount extends javax.swing.JFrame {
         });
 
         txtPassword.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
+        txtPassword.setToolTipText("Ingrese contraseña");
 
         cmbUserType.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         cmbUserType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Empleado", "Administrador", " " }));
+        cmbUserType.setToolTipText("Lista de tipo de usuario");
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/restaurantSystem/view/img/user.png"))); // NOI18N
 
@@ -215,7 +220,7 @@ public class frmNewAccount extends javax.swing.JFrame {
         int i = JOptionPane.showConfirmDialog(this, "Cancelar Registro?");
             if(i == 0)
             {
-                frmMenu menu = new frmMenu();
+                FrmMenu menu = new FrmMenu();
                 menu.setVisible(true);
                 this.setVisible(false);
             }
@@ -239,7 +244,7 @@ public class frmNewAccount extends javax.swing.JFrame {
                 Account account = new Account(id,userName, password, name, lastName, userType);
                 AccountManager.addAccount(account);
                 JOptionPane.showMessageDialog(this, "Registro correcto !");
-                frmMenu menu = new frmMenu();
+                FrmMenu menu = new FrmMenu();
                 menu.setVisible(true);
                 this.setVisible(false);
             }else{
@@ -271,21 +276,23 @@ public class frmNewAccount extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmNewAccount.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmNewAccount.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmNewAccount.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmNewAccount.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmNewAccount.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmNewAccount.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmNewAccount.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmNewAccount.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmNewAccount().setVisible(true);
+                new FrmNewAccount().setVisible(true);
             }
         });
     }

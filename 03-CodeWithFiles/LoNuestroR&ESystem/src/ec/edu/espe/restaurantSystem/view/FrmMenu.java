@@ -9,12 +9,12 @@ package ec.edu.espe.restaurantSystem.view;
  *
  * @author user
  */
-public class frmMenu extends javax.swing.JFrame {
+public class FrmMenu extends javax.swing.JFrame {
 
     /**
      * Creates new form frmMenu
      */
-    public frmMenu() {
+    public FrmMenu() {
         initComponents();
         this.setLocationRelativeTo(null);
     }
@@ -32,15 +32,15 @@ public class frmMenu extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem13 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
+        mnuMenu = new javax.swing.JMenu();
+        mnuEvent = new javax.swing.JMenu();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
-        jMenu4 = new javax.swing.JMenu();
-        jMenu5 = new javax.swing.JMenu();
+        mnuOrder = new javax.swing.JMenu();
+        mnuGestion = new javax.swing.JMenu();
         jMenuItem8 = new javax.swing.JMenuItem();
         jMenuItem10 = new javax.swing.JMenuItem();
-        jMenu6 = new javax.swing.JMenu();
+        mnuReport = new javax.swing.JMenu();
         jMenuItem11 = new javax.swing.JMenuItem();
         jMenuItem12 = new javax.swing.JMenuItem();
         mnuAccount = new javax.swing.JMenu();
@@ -52,6 +52,7 @@ public class frmMenu extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(800, 600));
 
         jMenu1.setText("Lo Nuestro R&E");
+        jMenu1.setToolTipText("");
 
         jMenuItem5.setText("Acerca de..");
         jMenu1.add(jMenuItem5);
@@ -61,15 +62,17 @@ public class frmMenu extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Menu");
-        jMenu2.addMouseListener(new java.awt.event.MouseAdapter() {
+        mnuMenu.setText("Menu");
+        mnuMenu.setToolTipText("Mostrar menu");
+        mnuMenu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu2MouseClicked(evt);
+                mnuMenuMouseClicked(evt);
             }
         });
-        jMenuBar1.add(jMenu2);
+        jMenuBar1.add(mnuMenu);
 
-        jMenu3.setText("Eventos");
+        mnuEvent.setText("Eventos");
+        mnuEvent.setToolTipText("Mostrar eventos");
 
         jMenuItem6.setText("Agenda");
         jMenuItem6.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -77,7 +80,7 @@ public class frmMenu extends javax.swing.JFrame {
                 jMenuItem6MouseClicked(evt);
             }
         });
-        jMenu3.add(jMenuItem6);
+        mnuEvent.add(jMenuItem6);
 
         jMenuItem7.setText("Nuevo Evento");
         jMenuItem7.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -85,19 +88,21 @@ public class frmMenu extends javax.swing.JFrame {
                 jMenuItem7MouseClicked(evt);
             }
         });
-        jMenu3.add(jMenuItem7);
+        mnuEvent.add(jMenuItem7);
 
-        jMenuBar1.add(jMenu3);
+        jMenuBar1.add(mnuEvent);
 
-        jMenu4.setText("Ordenes");
-        jMenu4.addMouseListener(new java.awt.event.MouseAdapter() {
+        mnuOrder.setText("Ordenes");
+        mnuOrder.setToolTipText("Mostrar ordenes");
+        mnuOrder.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu4MouseClicked(evt);
+                mnuOrderMouseClicked(evt);
             }
         });
-        jMenuBar1.add(jMenu4);
+        jMenuBar1.add(mnuOrder);
 
-        jMenu5.setText("Gestión");
+        mnuGestion.setText("Gestión");
+        mnuGestion.setToolTipText("Mostrar gestion");
 
         jMenuItem8.setText("Menú");
         jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
@@ -105,24 +110,26 @@ public class frmMenu extends javax.swing.JFrame {
                 jMenuItem8ActionPerformed(evt);
             }
         });
-        jMenu5.add(jMenuItem8);
+        mnuGestion.add(jMenuItem8);
 
         jMenuItem10.setText("Servicios para Eventos");
-        jMenu5.add(jMenuItem10);
+        mnuGestion.add(jMenuItem10);
 
-        jMenuBar1.add(jMenu5);
+        jMenuBar1.add(mnuGestion);
 
-        jMenu6.setText("Reportes");
+        mnuReport.setText("Reportes");
+        mnuReport.setToolTipText("Mostrar reportes");
 
         jMenuItem11.setText("Ordenes");
-        jMenu6.add(jMenuItem11);
+        mnuReport.add(jMenuItem11);
 
         jMenuItem12.setText("Eventos");
-        jMenu6.add(jMenuItem12);
+        mnuReport.add(jMenuItem12);
 
-        jMenuBar1.add(jMenu6);
+        jMenuBar1.add(mnuReport);
 
         mnuAccount.setText("Cuentas");
+        mnuAccount.setToolTipText("Mostrar cuentas");
         mnuAccount.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 mnuAccountMouseClicked(evt);
@@ -131,6 +138,7 @@ public class frmMenu extends javax.swing.JFrame {
         jMenuBar1.add(mnuAccount);
 
         jMenu8.setText("Ayuda");
+        jMenu8.setToolTipText("Ayuda");
         jMenuBar1.add(jMenu8);
 
         setJMenuBar(jMenuBar1);
@@ -151,40 +159,40 @@ public class frmMenu extends javax.swing.JFrame {
 
     private void mnuAccountMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnuAccountMouseClicked
         // TODO add your handling code here:
-        frmNewAccount account = new frmNewAccount();
+        FrmNewAccount account = new FrmNewAccount();
         account.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_mnuAccountMouseClicked
 
-    private void jMenu2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu2MouseClicked
+    private void mnuMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnuMenuMouseClicked
         // TODO add your handling code here:
-        frmMenuOption menuOp = new frmMenuOption();
+        FrmMenuOption menuOp = new FrmMenuOption();
         menuOp.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jMenu2MouseClicked
+    }//GEN-LAST:event_mnuMenuMouseClicked
 
     private void jMenuItem7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem7MouseClicked
         // TODO add your handling code here:
-        frmEvent frmE = new frmEvent();
+        FrmEvent frmE = new FrmEvent();
         frmE.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jMenuItem7MouseClicked
 
     private void jMenuItem6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem6MouseClicked
         // TODO add your handling code here:
-        frmScheduleEvent schedule = new frmScheduleEvent();
+        FrmScheduleEvent schedule = new FrmScheduleEvent();
         schedule.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jMenuItem6MouseClicked
 
-    private void jMenu4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu4MouseClicked
+    private void mnuOrderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnuOrderMouseClicked
         // TODO add your handling code here:
        
-    }//GEN-LAST:event_jMenu4MouseClicked
+    }//GEN-LAST:event_mnuOrderMouseClicked
 
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
         // TODO add your handling code here:
-        frmDish dish = new frmDish();
+        FrmDish dish = new FrmDish();
         dish.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jMenuItem8ActionPerformed
@@ -206,31 +214,27 @@ public class frmMenu extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmMenu().setVisible(true);
+                new FrmMenu().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu8;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem10;
@@ -242,5 +246,10 @@ public class frmMenu extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenu mnuAccount;
+    private javax.swing.JMenu mnuEvent;
+    private javax.swing.JMenu mnuGestion;
+    private javax.swing.JMenu mnuMenu;
+    private javax.swing.JMenu mnuOrder;
+    private javax.swing.JMenu mnuReport;
     // End of variables declaration//GEN-END:variables
 }
