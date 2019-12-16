@@ -8,6 +8,7 @@ package ec.edu.espe.restaurantSystem.view;
 import com.sun.awt.AWTUtilities;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -24,6 +25,7 @@ public class FrmSplashScreen extends javax.swing.JFrame implements Runnable{
         AWTUtilities.setWindowOpaque(this, false);
         time = new Thread(this);
         time.start();
+        setIconImage(new ImageIcon(getClass().getResource("/ec/edu/espe/restaurantSystem/view/img/icon.png")).getImage());
         
     }
 

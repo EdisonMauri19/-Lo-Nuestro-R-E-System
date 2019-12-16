@@ -94,7 +94,7 @@ public class FrmNewAccount extends javax.swing.JFrame {
         txtPassword.setToolTipText("Ingrese contraseña");
 
         cmbUserType.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
-        cmbUserType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Empleado", "Administrador", " " }));
+        cmbUserType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Empleado", "Administrador" }));
         cmbUserType.setToolTipText("Lista de tipo de usuario");
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/restaurantSystem/view/img/user.png"))); // NOI18N
