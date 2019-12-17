@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
  * @author user
  */
 public class FrmDish extends javax.swing.JFrame {
-
+    private Account user;
     /**
      * Creates new form frmDish
      */
@@ -26,6 +26,7 @@ public class FrmDish extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.cmbQuantity.setVisible(false);
         this.lblQuantity.setVisible(false);
+        this.setTitle("\tLo Nuestro Restaurant  | Gestión de Platos");
          setIconImage(new ImageIcon(getClass().getResource("/ec/edu/espe/restaurantSystem/view/img/icon.png")).getImage());
     }
 
@@ -58,7 +59,6 @@ public class FrmDish extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
-        setUndecorated(true);
 
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
         jLabel1.setText("Ingreso de Nuevo Plato");
@@ -274,9 +274,7 @@ public class FrmDish extends javax.swing.JFrame {
             product.setQuantity(getQuantity());
             DrinkManager.addDrink(product);
             JOptionPane.showMessageDialog(this,"Registro de plato exitoso" );
-            FrmMenuManager menu = new FrmMenuManager();
-            menu.setVisible(true);
-            this.setVisible(false);
+            backToMenu();
             
         }else if(rbtDessert.isSelected()||rbtExtra.isSelected()||rbtFirstDish.isSelected()||rbtMainCourse.isSelected()){
             Dish dish = new Dish();
@@ -287,9 +285,7 @@ public class FrmDish extends javax.swing.JFrame {
             dish.setType(getTypeDish());
             DishManager.addDish(dish);
             JOptionPane.showMessageDialog(this,"Registro de plato exitoso" );
-            FrmMenuManager menu = new FrmMenuManager();
-            menu.setVisible(true);
-            this.setVisible(false);
+            backToMenu();
         }
     }//GEN-LAST:event_btnAddDishActionPerformed
 
@@ -298,16 +294,24 @@ public class FrmDish extends javax.swing.JFrame {
         int i = JOptionPane.showConfirmDialog(this, "Cancelar Registro?");
             if(i == 0)
             {
-                FrmMenuManager menu = new FrmMenuManager();
-                menu.setVisible(true);
-                this.setVisible(false);
+                backToMenu();
             }
     }//GEN-LAST:event_btnExitActionPerformed
 
     private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNameActionPerformed
-
+    public void  backToMenu(){
+        if(this.user.getUserType().equals("Administrador")){
+           FrmMenuManager menu1 = new FrmMenuManager(this.user);
+           menu1.setVisible(true);
+           this.setVisible(false); 
+        }else{
+           FrmMenuEmployee menu2 = new FrmMenuEmployee(this.user);
+           menu2.setVisible(true);
+           this.setVisible(false); 
+        }
+    }
     public int getQuantity()
     {
         int index = this.cmbQuantity.getSelectedIndex();
@@ -393,4 +397,17 @@ public class FrmDish extends javax.swing.JFrame {
     private javax.swing.JSpinner spiPrice;
     private javax.swing.JTextField txtName;
     // End of variables declaration//GEN-END:variables
+    /**
+     * @return the user
+     */
+    public Account getUser() {
+        return user;
+    }
+
+    /**
+     * @param user the user to set
+     */
+    public void setUser(Account user) {
+        this.user = user;
+    }
 }

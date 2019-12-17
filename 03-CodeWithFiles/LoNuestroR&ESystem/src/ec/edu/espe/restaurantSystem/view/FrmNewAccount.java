@@ -7,6 +7,7 @@ package ec.edu.espe.restaurantSystem.view;
 
 import ec.edu.espe.restaurantSystem.controller.AccountManager;
 import ec.edu.espe.restaurantSystem.model.Account;
+import java.awt.HeadlessException;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -15,13 +16,14 @@ import javax.swing.JOptionPane;
  * @author user
  */
 public class FrmNewAccount extends javax.swing.JFrame {
-
+    private Account user;
     /**
      * Creates new form frmNewUser
      */
     public FrmNewAccount() {
         initComponents();
         this.setLocationRelativeTo(null);
+        this.setTitle("\tLo Nuestro Restaurant  | Nueva Cuenta");
          setIconImage(new ImageIcon(getClass().getResource("/ec/edu/espe/restaurantSystem/view/img/icon.png")).getImage());
     }
 
@@ -53,7 +55,6 @@ public class FrmNewAccount extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
-        setUndecorated(true);
 
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         jLabel1.setText("Registro Nuevo Usuario");
@@ -223,9 +224,7 @@ public class FrmNewAccount extends javax.swing.JFrame {
         int i = JOptionPane.showConfirmDialog(this, "Cancelar Registro?");
             if(i == 0)
             {
-                FrmMenuManager menu = new FrmMenuManager();
-                menu.setVisible(true);
-                this.setVisible(false);
+                backToMenu();
             }
     }//GEN-LAST:event_btnCancelActionPerformed
 
@@ -235,28 +234,50 @@ public class FrmNewAccount extends javax.swing.JFrame {
         if(validation == 0){
             JOptionPane.showMessageDialog(this, "Llenar todos los Campos");
         }else{
-            if(txtPassword.getText().length() >= 8)
-            {
-                String userName = txtUserName.getText();
-                String password = txtPassword.getText();
-                String name = txtName.getText();
-                String lastName = txtLastName.getText();
-                String userType = cmbUserType.getItemAt(cmbUserType.getSelectedIndex());
-                int id = AccountManager.assingId();
-                
-                Account account = new Account(id,userName, password, name, lastName, userType);
-                AccountManager.addAccount(account);
-                JOptionPane.showMessageDialog(this, "Registro correcto !");
-                FrmMenuManager menu = new FrmMenuManager();
-                menu.setVisible(true);
-                this.setVisible(false);
+            String userName = txtUserName.getText();
+            String password = txtPassword.getText();
+            Account newAccount = AccountManager.valNewAccount(userName, password);
+            if(newAccount == null){
+                createNewAccount();
             }else{
-                JOptionPane.showMessageDialog(this, "Contraseña inferiro a 8 caracteres");
+                JOptionPane.showMessageDialog(this, "Uusario o contraseña en uso\n Intente de nuevo");
+                txtUserName.setText("");
                 txtPassword.setText("");
             }
         }
     }//GEN-LAST:event_btnAddAccountActionPerformed
 
+    private void createNewAccount() throws HeadlessException {
+        if(txtPassword.getText().length() >= 8)
+        {
+            String userName = txtUserName.getText();
+            String password = txtPassword.getText();
+            String name = txtName.getText();
+            String lastName = txtLastName.getText();
+            String userType = cmbUserType.getItemAt(cmbUserType.getSelectedIndex());
+            int id = AccountManager.assingId();
+            
+            Account account = new Account(id,userName, password, name, lastName, userType);
+            AccountManager.addAccount(account);
+            JOptionPane.showMessageDialog(this, "Registro correcto !");
+            backToMenu();
+        }else{
+            JOptionPane.showMessageDialog(this, "Contraseña inferiro a 8 caracteres");
+            txtPassword.setText("");
+        }
+    }
+
+    public void  backToMenu(){
+        if(this.user.getUserType().equals("Administrador")){
+           FrmMenuManager menu1 = new FrmMenuManager(this.user);
+           menu1.setVisible(true);
+           this.setVisible(false); 
+        }else{
+           FrmMenuEmployee menu2 = new FrmMenuEmployee(this.user);
+           menu2.setVisible(true);
+           this.setVisible(false); 
+        }
+    }
     public int validateFields(){
         if(txtUserName.getText().equals("")||txtPassword.getText().equals("")||txtName.getText().equals("")||txtLastName.getText().equals("")){
             return 0;
@@ -317,4 +338,17 @@ public class FrmNewAccount extends javax.swing.JFrame {
     private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtUserName;
     // End of variables declaration//GEN-END:variables
+    /**
+     * @return the user
+     */
+    public Account getUser() {
+        return user;
+    }
+
+    /**
+     * @param user the user to set
+     */
+    public void setUser(Account user) {
+        this.user = user;
+    }
 }

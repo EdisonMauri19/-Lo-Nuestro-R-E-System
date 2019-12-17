@@ -5,6 +5,7 @@
  */
 package ec.edu.espe.restaurantSystem.view;
 
+import ec.edu.espe.restaurantSystem.model.Account;
 import javax.swing.ImageIcon;
 
 /**
@@ -12,13 +13,14 @@ import javax.swing.ImageIcon;
  * @author camyt
  */
 public class FrmScheduleEvent extends javax.swing.JFrame {
-
+    private Account user;
     /**
      * Creates new form frmScheduleEvent
      */
     public FrmScheduleEvent() {
         initComponents();
         this.setLocationRelativeTo(null);
+        this.setTitle("\tLo Nuestro Restaurant  | Agenda de Eventos");
          setIconImage(new ImageIcon(getClass().getResource("/ec/edu/espe/restaurantSystem/view/img/icon.png")).getImage());
     }
 
@@ -50,7 +52,6 @@ public class FrmScheduleEvent extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
-        setUndecorated(true);
 
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         jLabel1.setText("Agendar Evento");
@@ -200,11 +201,20 @@ public class FrmScheduleEvent extends javax.swing.JFrame {
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
-        FrmMenuManager menu = new FrmMenuManager();
-        menu.setVisible(true);
-        this.setVisible(false);
+        backToMenu();
     }//GEN-LAST:event_btnBackActionPerformed
 
+    public void  backToMenu(){
+        if(this.user.getUserType().equals("Administrador")){
+           FrmMenuManager menu1 = new FrmMenuManager(this.user);
+           menu1.setVisible(true);
+           this.setVisible(false); 
+        }else{
+           FrmMenuEmployee menu2 = new FrmMenuEmployee(this.user);
+           menu2.setVisible(true);
+           this.setVisible(false); 
+        }
+    }
     /**
      * @param args the command line arguments
      */
@@ -258,4 +268,17 @@ public class FrmScheduleEvent extends javax.swing.JFrame {
     private javax.swing.JTable jTable1;
     private javax.swing.JTable tblMenu;
     // End of variables declaration//GEN-END:variables
+    /**
+     * @return the user
+     */
+    public Account getUser() {
+        return user;
+    }
+
+    /**
+     * @param user the user to set
+     */
+    public void setUser(Account user) {
+        this.user = user;
+    }
 }

@@ -13,7 +13,7 @@ import javax.swing.ImageIcon;
  * @author camyt
  */
 public class FrmMenuOption extends javax.swing.JFrame {
-
+    private Account user;
     /**
      * Creates new form frmMenuOption
      */
@@ -23,6 +23,7 @@ public class FrmMenuOption extends javax.swing.JFrame {
         this.lblExtra.setVisible(false);
         this.lblName.setVisible(false);
         this.lblPrice.setVisible(false);
+        this.setTitle("\tLo Nuestro Restaurant  | Menú");
          setIconImage(new ImageIcon(getClass().getResource("/ec/edu/espe/restaurantSystem/view/img/icon.png")).getImage());
     }
 
@@ -52,7 +53,6 @@ public class FrmMenuOption extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(800, 600));
-        setUndecorated(true);
 
         gbtDishTipe.add(rbtExtra);
         rbtExtra.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
@@ -235,9 +235,16 @@ public class FrmMenuOption extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        FrmMenuManager frmmenu = new FrmMenuManager();
-        frmmenu.setVisible(true);
-        this.setVisible(false);
+        if(this.user.getUserType().equals("Administrador")){
+           FrmMenuManager menu1 = new FrmMenuManager(this.user);
+           menu1.setVisible(true);
+           this.setVisible(false); 
+        }else{
+           FrmMenuEmployee menu2 = new FrmMenuEmployee(this.user);
+           menu2.setVisible(true);
+           this.setVisible(false); 
+        }
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void rbtFirstDishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtFirstDishActionPerformed
@@ -325,4 +332,17 @@ new FrmMenuOption().setVisible(true);            }
     private javax.swing.JRadioButton rbtSecondDish;
     private javax.swing.JTable tblMenuOp;
     // End of variables declaration//GEN-END:variables
+    /**
+     * @return the user
+     */
+    public Account getUser() {
+        return user;
+    }
+
+    /**
+     * @param user the user to set
+     */
+    public void setUser(Account user) {
+        this.user = user;
+    }
 }

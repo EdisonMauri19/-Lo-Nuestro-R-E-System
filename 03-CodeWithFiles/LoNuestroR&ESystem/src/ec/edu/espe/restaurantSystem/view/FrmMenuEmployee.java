@@ -5,6 +5,7 @@
  */
 package ec.edu.espe.restaurantSystem.view;
 
+import ec.edu.espe.restaurantSystem.model.Account;
 import javax.swing.ImageIcon;
 
 /**
@@ -12,12 +13,14 @@ import javax.swing.ImageIcon;
  * @author camyt
  */
 public class FrmMenuEmployee extends javax.swing.JFrame {
-
+    private static Account user;
     /**
      * Creates new form FrmMenuEmployee
      */
-    public FrmMenuEmployee() {
+    public FrmMenuEmployee(Account user) {
         initComponents();
+        this.user = user;
+        this.setTitle("\tLo Nuestro Restaurant  | "+user.getName()+" --> Empleado");
         setIconImage(new ImageIcon(getClass().getResource("/ec/edu/espe/restaurantSystem/view/img/icon.png")).getImage());
     }
 
@@ -131,6 +134,7 @@ public class FrmMenuEmployee extends javax.swing.JFrame {
     private void mnuItmScheduleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnuItmScheduleMouseClicked
         // TODO add your handling code here:
         FrmScheduleEvent schedule = new FrmScheduleEvent();
+        schedule.setUser(user);
         schedule.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_mnuItmScheduleMouseClicked
@@ -138,6 +142,7 @@ public class FrmMenuEmployee extends javax.swing.JFrame {
     private void mnuItmScheduleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuItmScheduleActionPerformed
         // TODO add your handling code here:
         FrmScheduleEvent schedule = new FrmScheduleEvent();
+        schedule.setUser(user);
         schedule.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_mnuItmScheduleActionPerformed
@@ -145,6 +150,7 @@ public class FrmMenuEmployee extends javax.swing.JFrame {
     private void mnuItmNewEventMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnuItmNewEventMouseClicked
         // TODO add your handling code here:
         FrmEvent frmE = new FrmEvent();
+        frmE.setUser(user);
         frmE.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_mnuItmNewEventMouseClicked
@@ -152,6 +158,7 @@ public class FrmMenuEmployee extends javax.swing.JFrame {
     private void mnuItmNewEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuItmNewEventActionPerformed
         // TODO add your handling code here:
         FrmEvent frmE = new FrmEvent();
+        frmE.setUser(user);
         frmE.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_mnuItmNewEventActionPerformed
@@ -186,7 +193,7 @@ public class FrmMenuEmployee extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmMenuEmployee().setVisible(true);
+                new FrmMenuEmployee(user).setVisible(true);
             }
         });
     }
@@ -204,4 +211,18 @@ public class FrmMenuEmployee extends javax.swing.JFrame {
     private javax.swing.JMenu mnuMenu;
     private javax.swing.JMenu mnuOrder;
     // End of variables declaration//GEN-END:variables
+    /**
+     * @return the user
+     */
+    public Account getUser() {
+        return user;
+    }
+
+    /**
+     * @param user the user to set
+     */
+    public void setUser(Account user) {
+        this.user = user;
+    }
+    
 }

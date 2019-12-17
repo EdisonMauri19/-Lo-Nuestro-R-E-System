@@ -54,6 +54,19 @@ public class AccountManager {
         return account;
       
     }
+    public static Account valNewAccount(String userName, String password){
+      ArrayList<Account> accounts;
+      accounts = readAccount();
+      Account account = null;
+        for (int i = 0; i < accounts.size(); i++) {
+            if(accounts.get(i).getUserName().equals(userName) || PasswordLibrary.decryptPass(accounts.get(i).getPassword()).equals(password)){
+                account = accounts.get(i);
+            }
+                
+        }
+        return account;
+      
+    }
     
     public static int assingId(){
         ArrayList<Account> accounts;

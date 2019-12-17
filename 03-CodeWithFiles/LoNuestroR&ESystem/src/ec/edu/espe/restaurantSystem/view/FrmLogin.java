@@ -124,10 +124,16 @@ public class FrmLogin extends javax.swing.JFrame {
         account  = accountM.valAccount(userName, password);
         if(account != null){
             JOptionPane.showMessageDialog(this, "Ingreso correcto!");
+            if (account.getUserType().equals("Administrador")) {
+                FrmMenuManager menu1 = new FrmMenuManager(account);
+                menu1.setVisible(true);
+                this.setVisible(false);
+            }else {
+                FrmMenuEmployee menu2 = new FrmMenuEmployee(account);
+                menu2.setVisible(true);
+                this.setVisible(false);
+            }
             
-            FrmMenuManager menu = new FrmMenuManager();
-            menu.setVisible(true);
-            this.setVisible(false);
         }else{
             JOptionPane.showMessageDialog(this, "Usuario o contraseña Incorrecta", "Error", JOptionPane.ERROR_MESSAGE);
             int index = JOptionPane.showConfirmDialog(this, "Desea ingresar nuevamente?");

@@ -5,6 +5,7 @@
  */
 package ec.edu.espe.restaurantSystem.view;
 
+import ec.edu.espe.restaurantSystem.model.Account;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -13,14 +14,19 @@ import javax.swing.JOptionPane;
  * @author user
  */
 public class FrmMenuManager extends javax.swing.JFrame {
+    private static Account user;
+    
 
     /**
      * Creates new form frmMenu
+     * @param user
      */
-    public FrmMenuManager() {
+    public FrmMenuManager(Account user) {
         initComponents();
         this.setLocationRelativeTo(null);
-         setIconImage(new ImageIcon(getClass().getResource("/ec/edu/espe/restaurantSystem/view/img/icon.png")).getImage());
+        this.user = user;
+        this.setTitle("\tLo Nuestro Restaurant  | "+user.getName()+" --> Administrador");
+        setIconImage(new ImageIcon(getClass().getResource("/ec/edu/espe/restaurantSystem/view/img/icon.png")).getImage());
     }
 
     /**
@@ -190,6 +196,7 @@ public class FrmMenuManager extends javax.swing.JFrame {
     private void mnuAccountMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnuAccountMouseClicked
         // TODO add your handling code here:
         FrmNewAccount account = new FrmNewAccount();
+        account.setUser(user);
         account.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_mnuAccountMouseClicked
@@ -197,6 +204,7 @@ public class FrmMenuManager extends javax.swing.JFrame {
     private void jMenu2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu2MouseClicked
         // TODO add your handling code here:
         FrmMenuOption menuOp = new FrmMenuOption();
+        menuOp.setUser(user);
         menuOp.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jMenu2MouseClicked
@@ -204,6 +212,7 @@ public class FrmMenuManager extends javax.swing.JFrame {
     private void mnuItmNewEventMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnuItmNewEventMouseClicked
         // TODO add your handling code here:
         FrmEvent frmE = new FrmEvent();
+        frmE.setUser(user);
         frmE.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_mnuItmNewEventMouseClicked
@@ -211,6 +220,7 @@ public class FrmMenuManager extends javax.swing.JFrame {
     private void mnuItmScheduleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnuItmScheduleMouseClicked
         // TODO add your handling code here:
         FrmScheduleEvent schedule = new FrmScheduleEvent();
+        schedule.setUser(user);
         schedule.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_mnuItmScheduleMouseClicked
@@ -218,6 +228,7 @@ public class FrmMenuManager extends javax.swing.JFrame {
     private void mnuOrderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnuOrderMouseClicked
         // TODO add your handling code here:
        FrmOrder order= new FrmOrder();
+       order.setUser(user);
         order.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_mnuOrderMouseClicked
@@ -225,6 +236,7 @@ public class FrmMenuManager extends javax.swing.JFrame {
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
         // TODO add your handling code here:
         FrmDish dish = new FrmDish();
+        dish.setUser(user);
         dish.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jMenuItem8ActionPerformed
@@ -242,6 +254,7 @@ public class FrmMenuManager extends javax.swing.JFrame {
     private void mnuItmScheduleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuItmScheduleActionPerformed
         // TODO add your handling code here:
         FrmScheduleEvent schedule = new FrmScheduleEvent();
+        schedule.setUser(user);
         schedule.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_mnuItmScheduleActionPerformed
@@ -249,6 +262,7 @@ public class FrmMenuManager extends javax.swing.JFrame {
     private void mnuItmNewEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuItmNewEventActionPerformed
         // TODO add your handling code here:
         FrmEvent frmE = new FrmEvent();
+        frmE.setUser(user);
         frmE.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_mnuItmNewEventActionPerformed
@@ -256,6 +270,7 @@ public class FrmMenuManager extends javax.swing.JFrame {
     private void mnuOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuOrderActionPerformed
         // TODO add your handling code here:
         FrmOrder order= new FrmOrder();
+        order.setUser(user);
         order.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_mnuOrderActionPerformed
@@ -297,7 +312,7 @@ public class FrmMenuManager extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmMenuManager().setVisible(true);
+                new FrmMenuManager(user).setVisible(true);
             }
         });
     }
@@ -321,4 +336,18 @@ public class FrmMenuManager extends javax.swing.JFrame {
     private javax.swing.JMenu mnuOrder;
     private javax.swing.JMenu mnuTools;
     // End of variables declaration//GEN-END:variables
+
+    /**
+     * @return the user
+     */
+    public Account getUser() {
+        return user;
+    }
+
+    /**
+     * @param user the user to set
+     */
+    public void setUser(Account user) {
+        this.user = user;
+    }
 }
