@@ -147,6 +147,13 @@ public class FrmLogin extends javax.swing.JFrame {
                 if(op == 0){
                     System.exit(0);
                 }
+                else{
+                    txtPassword.setText("");
+                    txtPassword.setFocusable(true);
+                    txtUserName.setText("");
+                    txtUserName.setFocusable(true);
+                }
+                    
             }
         }
     }//GEN-LAST:event_btnLoginActionPerformed
