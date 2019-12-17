@@ -5,6 +5,8 @@
  */
 package ec.edu.espe.restaurantSystem.view;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author Jerico Ruiz
@@ -17,6 +19,7 @@ public class FrmOrder extends javax.swing.JFrame {
     public FrmOrder() {
         initComponents();
         this.setLocationRelativeTo(null);
+         setIconImage(new ImageIcon(getClass().getResource("/ec/edu/espe/restaurantSystem/view/img/icon.png")).getImage());
     }
 
     /**
@@ -124,14 +127,17 @@ public class FrmOrder extends javax.swing.JFrame {
         buttonGroup1.add(rbtFirstDish);
         rbtFirstDish.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
         rbtFirstDish.setText("Entrada");
+        rbtFirstDish.setToolTipText("Plato entrada");
 
         buttonGroup1.add(rbtSecondDish);
         rbtSecondDish.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
         rbtSecondDish.setText("Fuerte");
+        rbtSecondDish.setToolTipText("Plato fuerte");
 
         buttonGroup1.add(rbtDessert);
         rbtDessert.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
         rbtDessert.setText("Postre");
+        rbtDessert.setToolTipText("Plato postre");
         rbtDessert.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rbtDessertActionPerformed(evt);
@@ -141,13 +147,16 @@ public class FrmOrder extends javax.swing.JFrame {
         buttonGroup1.add(rbtDrink);
         rbtDrink.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
         rbtDrink.setText("Bebida");
+        rbtDrink.setToolTipText("Bebida");
 
         buttonGroup1.add(rbtExtra);
         rbtExtra.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
         rbtExtra.setText("Extra");
+        rbtExtra.setToolTipText("Platos extras");
 
         btnBack.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
         btnBack.setText("Regresar");
+        btnBack.setToolTipText("Regresar a menu");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
@@ -242,7 +251,7 @@ public class FrmOrder extends javax.swing.JFrame {
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
-        FrmMenu menu = new FrmMenu();
+        FrmMenuManager menu = new FrmMenuManager();
         menu.setVisible(true);
         this.setVisible(false);
         

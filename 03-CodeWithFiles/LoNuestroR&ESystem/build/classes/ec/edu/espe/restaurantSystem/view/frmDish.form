@@ -238,6 +238,7 @@
           <Font name="Trebuchet MS" size="18" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="A&#xf1;adir"/>
+        <Property name="toolTipText" type="java.lang.String" value="A&#xf1;adir plato"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddDishActionPerformed"/>
@@ -281,6 +282,7 @@
             <StringItem index="6" value="3 L"/>
           </StringArray>
         </Property>
+        <Property name="toolTipText" type="java.lang.String" value="Cantidad de bebida"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -292,6 +294,7 @@
           <Font name="Trebuchet MS" size="18" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Regresar"/>
+        <Property name="toolTipText" type="java.lang.String" value="Regresar a menu"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnExitActionPerformed"/>

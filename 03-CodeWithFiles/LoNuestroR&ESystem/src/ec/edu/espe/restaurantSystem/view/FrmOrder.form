@@ -269,6 +269,7 @@
           <Font name="Trebuchet MS" size="13" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Entrada"/>
+        <Property name="toolTipText" type="java.lang.String" value="Plato entrada"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="rbtSecondDish">
@@ -280,6 +281,7 @@
           <Font name="Trebuchet MS" size="13" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Fuerte"/>
+        <Property name="toolTipText" type="java.lang.String" value="Plato fuerte"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="rbtDessert">
@@ -291,6 +293,7 @@
           <Font name="Trebuchet MS" size="13" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Postre"/>
+        <Property name="toolTipText" type="java.lang.String" value="Plato postre"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbtDessertActionPerformed"/>
@@ -305,6 +308,7 @@
           <Font name="Trebuchet MS" size="13" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Bebida"/>
+        <Property name="toolTipText" type="java.lang.String" value="Bebida"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="rbtExtra">
@@ -316,6 +320,7 @@
           <Font name="Trebuchet MS" size="13" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Extra"/>
+        <Property name="toolTipText" type="java.lang.String" value="Platos extras"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnBack">
@@ -324,6 +329,7 @@
           <Font name="Trebuchet MS" size="13" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Regresar"/>
+        <Property name="toolTipText" type="java.lang.String" value="Regresar a menu"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBackActionPerformed"/>

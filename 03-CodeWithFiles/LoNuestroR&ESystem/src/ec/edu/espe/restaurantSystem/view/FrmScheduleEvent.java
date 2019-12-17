@@ -5,6 +5,8 @@
  */
 package ec.edu.espe.restaurantSystem.view;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author camyt
@@ -17,6 +19,7 @@ public class FrmScheduleEvent extends javax.swing.JFrame {
     public FrmScheduleEvent() {
         initComponents();
         this.setLocationRelativeTo(null);
+         setIconImage(new ImageIcon(getClass().getResource("/ec/edu/espe/restaurantSystem/view/img/icon.png")).getImage());
     }
 
     /**
@@ -64,7 +67,7 @@ public class FrmScheduleEvent extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        tblMenu.setToolTipText("");
+        tblMenu.setToolTipText("Tabla de menu");
         jScrollPane1.setViewportView(tblMenu);
 
         jLabel2.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
@@ -72,6 +75,7 @@ public class FrmScheduleEvent extends javax.swing.JFrame {
 
         btnBack.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
         btnBack.setText("Regresar");
+        btnBack.setToolTipText("Regresar a menu");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
@@ -108,6 +112,7 @@ public class FrmScheduleEvent extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        jTable1.setToolTipText("Tabla de vento");
         jScrollPane2.setViewportView(jTable1);
 
         jLabel9.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
@@ -195,7 +200,7 @@ public class FrmScheduleEvent extends javax.swing.JFrame {
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
-        FrmMenu menu = new FrmMenu();
+        FrmMenuManager menu = new FrmMenuManager();
         menu.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnBackActionPerformed

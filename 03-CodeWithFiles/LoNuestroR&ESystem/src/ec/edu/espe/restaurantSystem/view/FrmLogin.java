@@ -2,6 +2,7 @@ package ec.edu.espe.restaurantSystem.view;
 
 import ec.edu.espe.restaurantSystem.controller.AccountManager;
 import ec.edu.espe.restaurantSystem.model.Account;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /*
@@ -22,6 +23,7 @@ public class FrmLogin extends javax.swing.JFrame {
     public FrmLogin() {
         initComponents();
         this.setLocationRelativeTo(null);
+         setIconImage(new ImageIcon(getClass().getResource("/ec/edu/espe/restaurantSystem/view/img/icon.png")).getImage());
         
     }
 
@@ -64,10 +66,12 @@ public class FrmLogin extends javax.swing.JFrame {
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 340, -1, 22));
 
         txtPassword.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
+        txtPassword.setToolTipText("Ingrese contraseña");
         jPanel1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 330, 160, 30));
 
         btnLogin.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         btnLogin.setText("Ingresar");
+        btnLogin.setToolTipText("Ingresar a menu");
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLoginActionPerformed(evt);
@@ -76,6 +80,7 @@ public class FrmLogin extends javax.swing.JFrame {
         jPanel1.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 420, 109, 47));
 
         txtUserName.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
+        txtUserName.setToolTipText("Ingrese usuario");
         jPanel1.add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 260, 160, 30));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/restaurantSystem/view/img/user.png"))); // NOI18N
@@ -119,13 +124,24 @@ public class FrmLogin extends javax.swing.JFrame {
         account  = accountM.valAccount(userName, password);
         if(account != null){
             JOptionPane.showMessageDialog(this, "Ingreso correcto!");
-            FrmMenu menu = new FrmMenu();
+            
+            FrmMenuManager menu = new FrmMenuManager();
             menu.setVisible(true);
             this.setVisible(false);
         }else{
-            JOptionPane.showMessageDialog(this, "Usuario o contraseña Incorrecta");
+            JOptionPane.showMessageDialog(this, "Usuario o contraseña Incorrecta", "Error", JOptionPane.ERROR_MESSAGE);
+            int index = JOptionPane.showConfirmDialog(this, "Desea ingresar nuevamente?");
+            if (index == 0) {
             txtPassword.setText("");
             txtPassword.setFocusable(true);
+            txtUserName.setText("");
+            txtUserName.setFocusable(true);}
+            else{
+                int op = JOptionPane.showConfirmDialog(this, "Salir del Programa?");
+                if(op == 0){
+                    System.exit(0);
+                }
+            }
         }
     }//GEN-LAST:event_btnLoginActionPerformed
 

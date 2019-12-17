@@ -7,6 +7,7 @@ package ec.edu.espe.restaurantSystem.view;
 
 import ec.edu.espe.restaurantSystem.controller.AccountManager;
 import ec.edu.espe.restaurantSystem.model.Account;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -21,6 +22,7 @@ public class FrmNewAccount extends javax.swing.JFrame {
     public FrmNewAccount() {
         initComponents();
         this.setLocationRelativeTo(null);
+         setIconImage(new ImageIcon(getClass().getResource("/ec/edu/espe/restaurantSystem/view/img/icon.png")).getImage());
     }
 
     /**
@@ -101,6 +103,7 @@ public class FrmNewAccount extends javax.swing.JFrame {
 
         btnAddAccount.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         btnAddAccount.setText("Registrar");
+        btnAddAccount.setToolTipText("Registrar usuario");
         btnAddAccount.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddAccountActionPerformed(evt);
@@ -110,6 +113,7 @@ public class FrmNewAccount extends javax.swing.JFrame {
         btnCancel.setBackground(new java.awt.Color(255, 51, 51));
         btnCancel.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         btnCancel.setText("Cancelar");
+        btnCancel.setToolTipText("Cancelar usuario ");
         btnCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCancelActionPerformed(evt);
@@ -219,7 +223,7 @@ public class FrmNewAccount extends javax.swing.JFrame {
         int i = JOptionPane.showConfirmDialog(this, "Cancelar Registro?");
             if(i == 0)
             {
-                FrmMenu menu = new FrmMenu();
+                FrmMenuManager menu = new FrmMenuManager();
                 menu.setVisible(true);
                 this.setVisible(false);
             }
@@ -243,7 +247,7 @@ public class FrmNewAccount extends javax.swing.JFrame {
                 Account account = new Account(id,userName, password, name, lastName, userType);
                 AccountManager.addAccount(account);
                 JOptionPane.showMessageDialog(this, "Registro correcto !");
-                FrmMenu menu = new FrmMenu();
+                FrmMenuManager menu = new FrmMenuManager();
                 menu.setVisible(true);
                 this.setVisible(false);
             }else{

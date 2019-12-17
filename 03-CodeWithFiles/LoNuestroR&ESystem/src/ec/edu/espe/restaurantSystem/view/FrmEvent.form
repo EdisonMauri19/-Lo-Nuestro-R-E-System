@@ -233,6 +233,7 @@
           <Font name="Trebuchet MS" size="13" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Entrada"/>
+        <Property name="toolTipText" type="java.lang.String" value="Plato de entrada"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbtFirstDishActionPerformed"/>
@@ -247,7 +248,11 @@
           <Font name="Trebuchet MS" size="13" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Plato Fuerte"/>
+        <Property name="toolTipText" type="java.lang.String" value="Plato fuerte"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbtSecondDishActionPerformed"/>
+      </Events>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
       <AuxValues>
@@ -295,6 +300,7 @@
           <Font name="Trebuchet MS" size="13" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Extras"/>
+        <Property name="toolTipText" type="java.lang.String" value="Platos extras"/>
       </Properties>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane2">
@@ -334,11 +340,13 @@
     <Component class="javax.swing.JButton" name="btnAddEvent">
       <Properties>
         <Property name="text" type="java.lang.String" value="Agregar"/>
+        <Property name="toolTipText" type="java.lang.String" value="Agregar evento"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnExit">
       <Properties>
         <Property name="text" type="java.lang.String" value="Regresar"/>
+        <Property name="toolTipText" type="java.lang.String" value="Regresar a menu"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnExitActionPerformed"/>
@@ -353,6 +361,7 @@
           <Font name="Trebuchet MS" size="13" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Postre"/>
+        <Property name="toolTipText" type="java.lang.String" value="Platos de postres"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbtDessertActionPerformed"/>
@@ -367,6 +376,7 @@
           <Font name="Trebuchet MS" size="13" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Bebida"/>
+        <Property name="toolTipText" type="java.lang.String" value="Bebida"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblMenu1">

@@ -8,6 +8,7 @@ package ec.edu.espe.restaurantSystem.view;
 import ec.edu.espe.restaurantSystem.controller.DishManager;
 import ec.edu.espe.restaurantSystem.controller.DrinkManager;
 import ec.edu.espe.restaurantSystem.model.*;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 
@@ -25,6 +26,7 @@ public class FrmDish extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.cmbQuantity.setVisible(false);
         this.lblQuantity.setVisible(false);
+         setIconImage(new ImageIcon(getClass().getResource("/ec/edu/espe/restaurantSystem/view/img/icon.png")).getImage());
     }
 
     /**
@@ -120,6 +122,7 @@ public class FrmDish extends javax.swing.JFrame {
 
         btnAddDish.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         btnAddDish.setText("Añadir");
+        btnAddDish.setToolTipText("Añadir plato");
         btnAddDish.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddDishActionPerformed(evt);
@@ -140,9 +143,11 @@ public class FrmDish extends javax.swing.JFrame {
 
         cmbQuantity.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         cmbQuantity.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "350 ml", "500 ml", "750 ml", "1 L", "1.5 L", "2 L", "3 L" }));
+        cmbQuantity.setToolTipText("Cantidad de bebida");
 
         btnExit.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         btnExit.setText("Regresar");
+        btnExit.setToolTipText("Regresar a menu");
         btnExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnExitActionPerformed(evt);
@@ -269,7 +274,7 @@ public class FrmDish extends javax.swing.JFrame {
             product.setQuantity(getQuantity());
             DrinkManager.addDrink(product);
             JOptionPane.showMessageDialog(this,"Registro de plato exitoso" );
-            FrmMenu menu = new FrmMenu();
+            FrmMenuManager menu = new FrmMenuManager();
             menu.setVisible(true);
             this.setVisible(false);
             
@@ -282,7 +287,7 @@ public class FrmDish extends javax.swing.JFrame {
             dish.setType(getTypeDish());
             DishManager.addDish(dish);
             JOptionPane.showMessageDialog(this,"Registro de plato exitoso" );
-            FrmMenu menu = new FrmMenu();
+            FrmMenuManager menu = new FrmMenuManager();
             menu.setVisible(true);
             this.setVisible(false);
         }
@@ -293,7 +298,7 @@ public class FrmDish extends javax.swing.JFrame {
         int i = JOptionPane.showConfirmDialog(this, "Cancelar Registro?");
             if(i == 0)
             {
-                FrmMenu menu = new FrmMenu();
+                FrmMenuManager menu = new FrmMenuManager();
                 menu.setVisible(true);
                 this.setVisible(false);
             }

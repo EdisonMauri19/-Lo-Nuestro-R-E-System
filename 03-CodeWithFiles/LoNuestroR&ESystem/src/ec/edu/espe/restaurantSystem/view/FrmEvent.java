@@ -5,6 +5,8 @@
  */
 package ec.edu.espe.restaurantSystem.view;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author Jerico Ruiz
@@ -17,6 +19,7 @@ public class FrmEvent extends javax.swing.JFrame {
     public FrmEvent() {
         initComponents();
         this.setLocationRelativeTo(null);
+         setIconImage(new ImageIcon(getClass().getResource("/ec/edu/espe/restaurantSystem/view/img/icon.png")).getImage());
     }
 
     /**
@@ -82,6 +85,7 @@ public class FrmEvent extends javax.swing.JFrame {
         buttonGroup1.add(rbtFirstDish);
         rbtFirstDish.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
         rbtFirstDish.setText("Entrada");
+        rbtFirstDish.setToolTipText("Plato de entrada");
         rbtFirstDish.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rbtFirstDishActionPerformed(evt);
@@ -91,6 +95,12 @@ public class FrmEvent extends javax.swing.JFrame {
         buttonGroup1.add(rbtSecondDish);
         rbtSecondDish.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
         rbtSecondDish.setText("Plato Fuerte");
+        rbtSecondDish.setToolTipText("Plato fuerte");
+        rbtSecondDish.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtSecondDishActionPerformed(evt);
+            }
+        });
 
         tblMenu.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -109,6 +119,7 @@ public class FrmEvent extends javax.swing.JFrame {
         buttonGroup1.add(rbtThirdDish);
         rbtThirdDish.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
         rbtThirdDish.setText("Extras");
+        rbtThirdDish.setToolTipText("Platos extras");
 
         tblMenuEvent.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
         tblMenuEvent.setModel(new javax.swing.table.DefaultTableModel(
@@ -126,8 +137,10 @@ public class FrmEvent extends javax.swing.JFrame {
         jScrollPane2.setViewportView(tblMenuEvent);
 
         btnAddEvent.setText("Agregar");
+        btnAddEvent.setToolTipText("Agregar evento");
 
         btnExit.setText("Regresar");
+        btnExit.setToolTipText("Regresar a menu");
         btnExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnExitActionPerformed(evt);
@@ -137,6 +150,7 @@ public class FrmEvent extends javax.swing.JFrame {
         buttonGroup1.add(rbtDessert);
         rbtDessert.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
         rbtDessert.setText("Postre");
+        rbtDessert.setToolTipText("Platos de postres");
         rbtDessert.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rbtDessertActionPerformed(evt);
@@ -146,6 +160,7 @@ public class FrmEvent extends javax.swing.JFrame {
         buttonGroup1.add(rbtDrink);
         rbtDrink.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
         rbtDrink.setText("Bebida");
+        rbtDrink.setToolTipText("Bebida");
 
         lblMenu1.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
         lblMenu1.setText("Menú del Evento");
@@ -261,10 +276,14 @@ public class FrmEvent extends javax.swing.JFrame {
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
         // TODO add your handling code here:
-        FrmMenu menu = new FrmMenu();
+        FrmMenuManager menu = new FrmMenuManager();
         menu.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnExitActionPerformed
+
+    private void rbtSecondDishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtSecondDishActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rbtSecondDishActionPerformed
 
     /**
      * @param args the command line arguments

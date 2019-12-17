@@ -6,6 +6,7 @@
 package ec.edu.espe.restaurantSystem.view;
 
 import ec.edu.espe.restaurantSystem.model.*;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -22,6 +23,7 @@ public class FrmMenuOption extends javax.swing.JFrame {
         this.lblExtra.setVisible(false);
         this.lblName.setVisible(false);
         this.lblPrice.setVisible(false);
+         setIconImage(new ImageIcon(getClass().getResource("/ec/edu/espe/restaurantSystem/view/img/icon.png")).getImage());
     }
 
     /**
@@ -55,6 +57,7 @@ public class FrmMenuOption extends javax.swing.JFrame {
         gbtDishTipe.add(rbtExtra);
         rbtExtra.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         rbtExtra.setText("Extras");
+        rbtExtra.setToolTipText("Platos extras");
         rbtExtra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rbtExtraActionPerformed(evt);
@@ -90,10 +93,12 @@ public class FrmMenuOption extends javax.swing.JFrame {
                 "N", "Nombre", "Precio"
             }
         ));
+        tblMenuOp.setToolTipText("Tabla de menu");
         jScrollPane1.setViewportView(tblMenuOp);
 
         jButton1.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jButton1.setText("Regresar");
+        jButton1.setToolTipText("Regresar a menu");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -106,6 +111,7 @@ public class FrmMenuOption extends javax.swing.JFrame {
         gbtDishTipe.add(rbtFirstDish);
         rbtFirstDish.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         rbtFirstDish.setText("Entradas");
+        rbtFirstDish.setToolTipText("Platos de ntrada");
         rbtFirstDish.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rbtFirstDishActionPerformed(evt);
@@ -115,6 +121,7 @@ public class FrmMenuOption extends javax.swing.JFrame {
         gbtDishTipe.add(rbtSecondDish);
         rbtSecondDish.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         rbtSecondDish.setText("Platos Fuerte");
+        rbtSecondDish.setToolTipText("Platos fuerte");
         rbtSecondDish.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rbtSecondDishActionPerformed(evt);
@@ -124,6 +131,7 @@ public class FrmMenuOption extends javax.swing.JFrame {
         gbtDishTipe.add(rbtDessert);
         rbtDessert.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         rbtDessert.setText("Postres");
+        rbtDessert.setToolTipText("Plato de postres");
         rbtDessert.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rbtDessertActionPerformed(evt);
@@ -133,6 +141,7 @@ public class FrmMenuOption extends javax.swing.JFrame {
         gbtDishTipe.add(rbtDrink);
         rbtDrink.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         rbtDrink.setText("Bebidas");
+        rbtDrink.setToolTipText("Bebida");
         rbtDrink.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rbtDrinkActionPerformed(evt);
@@ -226,7 +235,7 @@ public class FrmMenuOption extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        FrmMenu frmmenu = new FrmMenu();
+        FrmMenuManager frmmenu = new FrmMenuManager();
         frmmenu.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
