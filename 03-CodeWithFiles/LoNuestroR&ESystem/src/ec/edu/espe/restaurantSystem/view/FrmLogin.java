@@ -44,8 +44,9 @@ public class FrmLogin extends javax.swing.JFrame {
         btnLogin = new javax.swing.JButton();
         txtUserName = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(800, 600));
@@ -55,19 +56,19 @@ public class FrmLogin extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         jLabel4.setText("Inicio de Sesión");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 160, 180, 64));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 280, 180, 64));
 
         jLabel5.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel5.setText("Usuario:");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 370, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel6.setText("Contraseña:");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 340, -1, 22));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 440, -1, 22));
 
         txtPassword.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         txtPassword.setToolTipText("Ingrese contraseña");
-        jPanel1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 330, 160, 30));
+        jPanel1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 430, 160, 30));
 
         btnLogin.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         btnLogin.setText("Ingresar");
@@ -77,18 +78,14 @@ public class FrmLogin extends javax.swing.JFrame {
                 btnLoginActionPerformed(evt);
             }
         });
-        jPanel1.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 420, 109, 47));
+        jPanel1.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 500, 109, 47));
 
         txtUserName.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         txtUserName.setToolTipText("Ingrese usuario");
-        jPanel1.add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 260, 160, 30));
+        jPanel1.add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 370, 160, 30));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/espe/restaurantSystem/view/img/user.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 230, -1, 180));
-
-        jLabel7.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
-        jLabel7.setText("Lo Nuestro R&E System");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, 390, 64));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 100, 170, 170));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 1, 36)); // NOI18N
@@ -99,17 +96,24 @@ public class FrmLogin extends javax.swing.JFrame {
                 jLabel2MouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 40, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 20, -1, -1));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 340, 540, 20));
+
+        jLabel7.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel7.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(204, 0, 0));
+        jLabel7.setText("Lo Nuestro R&E System");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, 421, 90));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -123,28 +127,29 @@ public class FrmLogin extends javax.swing.JFrame {
         String password = txtPassword.getText();
         account  = accountM.valAccount(userName, password);
         if(account != null){
-            JOptionPane.showMessageDialog(this, "Ingreso correcto!");
+            JOptionPane.showMessageDialog(rootPane, "Ingreso correcto");
             if (account.getUserType().equals("Administrador")) {
-                FrmMenuManager menu1 = new FrmMenuManager(account);
-                menu1.setVisible(true);
+                FrmMenuManager menuAdmin = new FrmMenuManager(account);
+                menuAdmin.setVisible(true);
                 this.setVisible(false);
             }else {
-                FrmMenuEmployee menu2 = new FrmMenuEmployee(account);
-                menu2.setVisible(true);
+                FrmMenuEmployee menuEmployee = new FrmMenuEmployee(account);
+                menuEmployee.setVisible(true);
                 this.setVisible(false);
             }
             
         }else{
             JOptionPane.showMessageDialog(this, "Usuario o contraseña Incorrecta", "Error", JOptionPane.ERROR_MESSAGE);
-            int index = JOptionPane.showConfirmDialog(this, "Desea ingresar nuevamente?");
-            if (index == 0) {
+            int answer = JOptionPane.showConfirmDialog(null, "¿Desea ingresar nuevamente?");
+            
+            if (answer == 0) {
             txtPassword.setText("");
             txtPassword.setFocusable(true);
             txtUserName.setText("");
             txtUserName.setFocusable(true);}
             else{
-                int op = JOptionPane.showConfirmDialog(this, "Salir del Programa?");
-                if(op == 0){
+                int answerExit = JOptionPane.showConfirmDialog(null, "¿Desea salir del Programa?");
+                if(answerExit == 0){
                     System.exit(0);
                 }
                 else{
@@ -160,10 +165,10 @@ public class FrmLogin extends javax.swing.JFrame {
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
         // TODO add your handling code here:
-        int index = JOptionPane.showConfirmDialog(this, "Salir del Programa?");
-        if (index == 0) {
-            System.exit(0);
-        }
+        int answerExit = JOptionPane.showConfirmDialog(null, "¿Desea salir del Programa?");
+                if(answerExit == 0){
+                    System.exit(0);
+                }
     }//GEN-LAST:event_jLabel2MouseClicked
 
     /**
@@ -213,6 +218,7 @@ public class FrmLogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtUserName;
     // End of variables declaration//GEN-END:variables

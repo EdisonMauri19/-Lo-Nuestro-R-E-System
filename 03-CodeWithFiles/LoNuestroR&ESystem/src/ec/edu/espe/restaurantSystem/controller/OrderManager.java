@@ -82,7 +82,7 @@ public class OrderManager {
     }
     
     public ArrayList<Order> readOrders(){
-        ArrayList<Order> arrOrder = new ArrayList<Order>();
+        ArrayList<Order> orders = new ArrayList<Order>();
         DishManager dishM = new DishManager();
         try{
             File f=new File("Order.csv");
@@ -108,7 +108,7 @@ public class OrderManager {
                         arrDish.add(dish);
                     }
                     order.setDishList(arrDish);
-                    arrOrder.add(order);
+                    orders.add(order);
                 }
                 br.close();
             
@@ -116,16 +116,16 @@ public class OrderManager {
         }catch(Exception e){
             System.out.println(e);}
         
-        return arrOrder;
+        return orders;
     }
     
     public Order searchOrder(int id){
-        ArrayList<Order> arrOrder = new ArrayList<Order>();
+        ArrayList<Order> orders = new ArrayList<Order>();
         Order order = new Order();
-        arrOrder = readOrders();
-        for (int i = 0; i < arrOrder.size(); i++) {
-            if (arrOrder.get(i).getId() == id) {
-                order =  arrOrder.get(i);
+        orders = readOrders();
+        for (int i = 0; i < orders.size(); i++) {
+            if (orders.get(i).getId() == id) {
+                order =  orders.get(i);
             }
         }
         return order;

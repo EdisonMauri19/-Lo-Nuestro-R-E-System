@@ -40,11 +40,11 @@ public class FrmMenuOption extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         rbtExtra = new javax.swing.JRadioButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblMenuOp = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        tblMenuInformation = new javax.swing.JTable();
+        btnBack = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         rbtFirstDish = new javax.swing.JRadioButton();
-        rbtSecondDish = new javax.swing.JRadioButton();
+        rbtMainCourse = new javax.swing.JRadioButton();
         rbtDessert = new javax.swing.JRadioButton();
         rbtDrink = new javax.swing.JRadioButton();
         lblName = new javax.swing.JLabel();
@@ -64,8 +64,8 @@ public class FrmMenuOption extends javax.swing.JFrame {
             }
         });
 
-        tblMenuOp.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        tblMenuOp.setModel(new javax.swing.table.DefaultTableModel(
+        tblMenuInformation.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        tblMenuInformation.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -93,15 +93,15 @@ public class FrmMenuOption extends javax.swing.JFrame {
                 "N", "Nombre", "Precio"
             }
         ));
-        tblMenuOp.setToolTipText("Tabla de menu");
-        jScrollPane1.setViewportView(tblMenuOp);
+        tblMenuInformation.setToolTipText("Tabla de menu");
+        jScrollPane1.setViewportView(tblMenuInformation);
 
-        jButton1.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        jButton1.setText("Regresar");
-        jButton1.setToolTipText("Regresar a menu");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnBack.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        btnBack.setText("Regresar");
+        btnBack.setToolTipText("Regresar a menu");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnBackActionPerformed(evt);
             }
         });
 
@@ -118,13 +118,13 @@ public class FrmMenuOption extends javax.swing.JFrame {
             }
         });
 
-        gbtDishTipe.add(rbtSecondDish);
-        rbtSecondDish.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        rbtSecondDish.setText("Platos Fuerte");
-        rbtSecondDish.setToolTipText("Platos fuerte");
-        rbtSecondDish.addActionListener(new java.awt.event.ActionListener() {
+        gbtDishTipe.add(rbtMainCourse);
+        rbtMainCourse.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        rbtMainCourse.setText("Platos Fuerte");
+        rbtMainCourse.setToolTipText("Platos fuerte");
+        rbtMainCourse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rbtSecondDishActionPerformed(evt);
+                rbtMainCourseActionPerformed(evt);
             }
         });
 
@@ -167,7 +167,7 @@ public class FrmMenuOption extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(rbtFirstDish)
                         .addGap(18, 18, 18)
-                        .addComponent(rbtSecondDish)
+                        .addComponent(rbtMainCourse)
                         .addGap(18, 18, 18)
                         .addComponent(rbtDessert)
                         .addGap(29, 29, 29)
@@ -186,7 +186,7 @@ public class FrmMenuOption extends javax.swing.JFrame {
                         .addContainerGap(186, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(61, 61, 61))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -199,7 +199,7 @@ public class FrmMenuOption extends javax.swing.JFrame {
                         .addGap(34, 34, 34)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(rbtFirstDish)
-                            .addComponent(rbtSecondDish)
+                            .addComponent(rbtMainCourse)
                             .addComponent(rbtDrink)
                             .addComponent(rbtExtra)
                             .addComponent(rbtDessert))
@@ -215,7 +215,7 @@ public class FrmMenuOption extends javax.swing.JFrame {
                 .addContainerGap(77, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32))
         );
 
@@ -233,49 +233,49 @@ public class FrmMenuOption extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
         if(this.user.getUserType().equals("Administrador")){
-           FrmMenuManager menu1 = new FrmMenuManager(this.user);
-           menu1.setVisible(true);
+           FrmMenuManager menuAdmin = new FrmMenuManager(this.user);
+           menuAdmin.setVisible(true);
            this.setVisible(false); 
         }else{
-           FrmMenuEmployee menu2 = new FrmMenuEmployee(this.user);
-           menu2.setVisible(true);
+           FrmMenuEmployee menuEmployee = new FrmMenuEmployee(this.user);
+           menuEmployee.setVisible(true);
            this.setVisible(false); 
         }
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnBackActionPerformed
 
     private void rbtFirstDishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtFirstDishActionPerformed
         // TODO add your handling code here:
         Dish dish = new Dish();
-        dish.showProducts(tblMenuOp, "Entrada");
+        dish.showProducts(tblMenuInformation, "Entrada");
         
     }//GEN-LAST:event_rbtFirstDishActionPerformed
 
-    private void rbtSecondDishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtSecondDishActionPerformed
+    private void rbtMainCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtMainCourseActionPerformed
         // TODO add your handling code here:
         Dish dish = new Dish();
-        dish.showProducts(tblMenuOp, "Plato Fuerte");
-    }//GEN-LAST:event_rbtSecondDishActionPerformed
+        dish.showProducts(tblMenuInformation, "Plato Fuerte");
+    }//GEN-LAST:event_rbtMainCourseActionPerformed
 
     private void rbtDessertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtDessertActionPerformed
         // TODO add your handling code here:
         Dish dish = new Dish();
-        dish.showProducts(tblMenuOp, "Postre");
+        dish.showProducts(tblMenuInformation, "Postre");
     }//GEN-LAST:event_rbtDessertActionPerformed
 
     private void rbtExtraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtExtraActionPerformed
         // TODO add your handling code here:
         Dish dish = new Dish();
-        dish.showProducts(tblMenuOp, "Extra");
+        dish.showProducts(tblMenuInformation, "Extra");
     }//GEN-LAST:event_rbtExtraActionPerformed
 
     private void rbtDrinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtDrinkActionPerformed
         // TODO add your handling code here:
         Dish dish = new Dish();
-        dish.showProducts(tblMenuOp, "");
+        dish.showProducts(tblMenuInformation, "");
     }//GEN-LAST:event_rbtDrinkActionPerformed
 
     /**
@@ -317,8 +317,8 @@ new FrmMenuOption().setVisible(true);            }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBack;
     private javax.swing.ButtonGroup gbtDishTipe;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
@@ -329,8 +329,8 @@ new FrmMenuOption().setVisible(true);            }
     private javax.swing.JRadioButton rbtDrink;
     private javax.swing.JRadioButton rbtExtra;
     private javax.swing.JRadioButton rbtFirstDish;
-    private javax.swing.JRadioButton rbtSecondDish;
-    private javax.swing.JTable tblMenuOp;
+    private javax.swing.JRadioButton rbtMainCourse;
+    private javax.swing.JTable tblMenuInformation;
     // End of variables declaration//GEN-END:variables
     /**
      * @return the user
