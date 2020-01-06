@@ -4,7 +4,7 @@
   <NonVisualComponents>
     <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
       <SubComponents>
-        <Menu class="javax.swing.JMenu" name="mnuTools">
+        <Menu class="javax.swing.JMenu" name="mnuMenuAdmin">
           <Properties>
             <Property name="text" type="java.lang.String" value="Lo Nuestro R&amp;E"/>
             <Property name="toolTipText" type="java.lang.String" value="Boton lo nuestro"/>
@@ -25,19 +25,19 @@
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="jMenu2">
+        <Menu class="javax.swing.JMenu" name="mnuMenu">
           <Properties>
             <Property name="text" type="java.lang.String" value="Menu"/>
-            <Property name="toolTipText" type="java.lang.String" value="Boton Menu"/>
+            <Property name="toolTipText" type="java.lang.String" value="Mostrar el menu del restaurante"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jMenu2MouseClicked"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="mnuMenuMouseClicked"/>
           </Events>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="jMenu3">
+        <Menu class="javax.swing.JMenu" name="mnuEvent">
           <Properties>
             <Property name="text" type="java.lang.String" value="Eventos"/>
-            <Property name="toolTipText" type="java.lang.String" value="Boton eventos"/>
+            <Property name="toolTipText" type="java.lang.String" value="Ingresar eventos"/>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="mnuItmSchedule">
@@ -65,29 +65,29 @@
         <Menu class="javax.swing.JMenu" name="mnuOrder">
           <Properties>
             <Property name="text" type="java.lang.String" value="Ordenes"/>
-            <Property name="toolTipText" type="java.lang.String" value="Mostrar ordenes"/>
+            <Property name="toolTipText" type="java.lang.String" value="Ingresar ordenes"/>
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="mnuOrderMouseClicked"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuOrderActionPerformed"/>
           </Events>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="jMenu5">
+        <Menu class="javax.swing.JMenu" name="mnuManagement">
           <Properties>
             <Property name="text" type="java.lang.String" value="Gesti&#xf3;n"/>
-            <Property name="toolTipText" type="java.lang.String" value="Mostrar gestion"/>
+            <Property name="toolTipText" type="java.lang.String" value="Ingresar nuevos platos o eventos"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem8">
+            <MenuItem class="javax.swing.JMenuItem" name="mnuItmDish">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Men&#xfa;"/>
-                <Property name="toolTipText" type="java.lang.String" value="Mostrar menu"/>
+                <Property name="text" type="java.lang.String" value="Nuevo Plato"/>
+                <Property name="toolTipText" type="java.lang.String" value="Ingresar nuevo plato"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem8ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuItmDishActionPerformed"/>
               </Events>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem10">
+            <MenuItem class="javax.swing.JMenuItem" name="mnuItmServices">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Servicios para Eventos"/>
                 <Property name="toolTipText" type="java.lang.String" value="Mostrar servicios"/>
@@ -95,19 +95,22 @@
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="jMenu6">
+        <Menu class="javax.swing.JMenu" name="mnuReport">
           <Properties>
             <Property name="text" type="java.lang.String" value="Reportes"/>
-            <Property name="toolTipText" type="java.lang.String" value="Mostrar reportes"/>
+            <Property name="toolTipText" type="java.lang.String" value="Reportes de ventas"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem11">
+            <MenuItem class="javax.swing.JMenuItem" name="mnuItmOrder">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ordenes"/>
                 <Property name="toolTipText" type="java.lang.String" value="Mostrar ordenes"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuItmOrderActionPerformed"/>
+              </Events>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem12">
+            <MenuItem class="javax.swing.JMenuItem" name="mnuItmEvent">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Eventos"/>
                 <Property name="toolTipText" type="java.lang.String" value="Mostrar eventos"/>
@@ -118,13 +121,13 @@
         <Menu class="javax.swing.JMenu" name="mnuAccount">
           <Properties>
             <Property name="text" type="java.lang.String" value="Cuentas"/>
-            <Property name="toolTipText" type="java.lang.String" value="Mostrar cuentas"/>
+            <Property name="toolTipText" type="java.lang.String" value="Ingresar nueva cuenta"/>
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="mnuAccountMouseClicked"/>
           </Events>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="jMenu8">
+        <Menu class="javax.swing.JMenu" name="mnuHelp">
           <Properties>
             <Property name="text" type="java.lang.String" value="Ayuda"/>
             <Property name="toolTipText" type="java.lang.String" value="Mostrar ayuda"/>

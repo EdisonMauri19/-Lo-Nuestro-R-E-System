@@ -19,24 +19,7 @@ import java.util.Scanner;
  */
 public class DishManager {
     private static Gson gson = new Gson();
-    public static Product dataEntry(){
-        Scanner scn = new Scanner(System.in);
-        Dish newDish = null;
-        try{
-            
-            System.out.println("Codigo Plato : ");
-            newDish.setId(Integer.parseInt(scn.nextLine()));
-            System.out.println("Nombre        : ");
-            newDish.setName(scn.nextLine()); 
-            System.out.println("Precio       : ");
-            newDish.setPrice(Float.parseFloat(scn.nextLine()));
-        }
-        catch(Exception e){
-            System.out.println("Invalid format");
-            e.printStackTrace();
-        }
-        return newDish;
-    }
+   
     
     public static void addDish(Dish newDish)
     {
@@ -44,7 +27,7 @@ public class DishManager {
     }
     
     public static ArrayList<Dish> readDishes(){
-        ArrayList<Dish> arrDish = new ArrayList<>();
+        ArrayList<Dish> dishes = new ArrayList<>();
         ArrayList<Object> object;
         object = FileLibrary.readObjects(Dish.class.getSimpleName());
         for (int i = 0; i < object.size(); i++) {
@@ -53,20 +36,20 @@ public class DishManager {
             objectJ = object.get(i);
             String jDish = gson.toJson(objectJ);
             dish = gson.fromJson(jDish, Dish.class);
-            arrDish.add(dish);
+            dishes.add(dish);
             
         }
         
-        return arrDish;
+        return dishes;
     }
     
     public static Product searchDish(int id){
-        ArrayList<Dish> arrDish = new ArrayList<>();
+        ArrayList<Dish> dishes = new ArrayList<>();
         Dish dish = null;
-        arrDish = readDishes();
-        for (int i = 0; i < arrDish.size(); i++) {
-            if (arrDish.get(i).getId() == id) {
-                dish =  arrDish.get(i);
+        dishes = readDishes();
+        for (int i = 0; i < dishes.size(); i++) {
+            if (dishes.get(i).getId() == id) {
+                dish =  dishes.get(i);
             }
         }
         return dish;

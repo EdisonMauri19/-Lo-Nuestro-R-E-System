@@ -20,7 +20,7 @@ public class FrmMenuEmployee extends javax.swing.JFrame {
     public FrmMenuEmployee(Account user) {
         initComponents();
         this.user = user;
-        this.setTitle("\tLo Nuestro Restaurant  | "+user.getName()+" --> Empleado");
+        this.setTitle("\tLo Nuestro Restaurant  | "+user.getName()+" - Empleado");
         setIconImage(new ImageIcon(getClass().getResource("/ec/edu/espe/restaurantSystem/view/img/icon.png")).getImage());
     }
 
@@ -35,7 +35,7 @@ public class FrmMenuEmployee extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
+        jMenuEmployee = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
         mnuMenu = new javax.swing.JMenu();
@@ -59,16 +59,16 @@ public class FrmMenuEmployee extends javax.swing.JFrame {
             .addGap(0, 575, Short.MAX_VALUE)
         );
 
-        jMenu1.setText("Lo Nuestro R&E");
-        jMenu1.setToolTipText("Boton Lo Nuestro");
+        jMenuEmployee.setText("Lo Nuestro R&E");
+        jMenuEmployee.setToolTipText("Boton Lo Nuestro");
 
         jMenu3.setText("Acerca de");
-        jMenu1.add(jMenu3);
+        jMenuEmployee.add(jMenu3);
 
         jMenu4.setText("Ayuda");
-        jMenu1.add(jMenu4);
+        jMenuEmployee.add(jMenu4);
 
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(jMenuEmployee);
 
         mnuMenu.setText("Menu");
         mnuMenu.setToolTipText("Boton Menu");
@@ -199,10 +199,10 @@ public class FrmMenuEmployee extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenu jMenuEmployee;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JMenu mnuEvent;
     private javax.swing.JMenu mnuHelp;

@@ -5,8 +5,13 @@
  */
 package ec.edu.espe.restaurantSystem.view;
 
+import ec.edu.espe.restaurantSystem.controller.DessertManage;
 import ec.edu.espe.restaurantSystem.controller.DishManager;
 import ec.edu.espe.restaurantSystem.controller.DrinkManager;
+import ec.edu.espe.restaurantSystem.controller.FirstDishManager;
+import ec.edu.espe.restaurantSystem.controller.MainCourseManage;
+import ec.edu.espe.restaurantSystem.lib.FileLibrary;
+import ec.edu.espe.restaurantSystem.model.FirstDish;
 import ec.edu.espe.restaurantSystem.model.*;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -27,7 +32,7 @@ public class FrmDish extends javax.swing.JFrame {
         this.cmbQuantity.setVisible(false);
         this.lblQuantity.setVisible(false);
         this.setTitle("\tLo Nuestro Restaurant  | Gestión de Platos");
-         setIconImage(new ImageIcon(getClass().getResource("/ec/edu/espe/restaurantSystem/view/img/icon.png")).getImage());
+        setIconImage(new ImageIcon(getClass().getResource("/ec/edu/espe/restaurantSystem/view/img/icon.png")).getImage());
     }
 
     /**
@@ -166,11 +171,12 @@ public class FrmDish extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(117, 117, 117)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel2)
                             .addComponent(jLabel4)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(lblQuantity)
-                                .addComponent(jLabel3)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel2))
+                                .addGap(9, 9, 9)))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -184,9 +190,12 @@ public class FrmDish extends javax.swing.JFrame {
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(spiPrice, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(rbtMainCourse, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(cmbQuantity, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(rbtDrink, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(rbtDrink)
+                                .addGap(60, 60, 60)
+                                .addComponent(lblQuantity)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(cmbQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(221, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -212,14 +221,13 @@ public class FrmDish extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(rbtDessert)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rbtDrink)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(rbtDrink)
+                            .addComponent(lblQuantity)
+                            .addComponent(cmbQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(rbtExtra)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblQuantity)
-                    .addComponent(cmbQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(46, 46, 46)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAddDish, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -264,35 +272,26 @@ public class FrmDish extends javax.swing.JFrame {
         String type;
         String name = this.txtName.getText();
         float price = Float.parseFloat(this.spiPrice.getValue().toString());
+        ////////
+        if(rbtFirstDish.isSelected()){
+            registryFD(name, price);
+        }
+        if(rbtMainCourse.isSelected()){
+            registryMC(name, price);
+        }
+        if(rbtDessert.isSelected()){
+            registryDst(name, price);
+        }      
         if(rbtDrink.isSelected())
-        {
-            Drink product = new Drink();
-            int id = product.assingId();
-            product.setId(id);
-            product.setName(name);
-            product.setPrice(price);
-            product.setQuantity(getQuantity());
-            DrinkManager.addDrink(product);
-            JOptionPane.showMessageDialog(this,"Registro de plato exitoso" );
-            backToMenu();
-            
-        }else if(rbtDessert.isSelected()||rbtExtra.isSelected()||rbtFirstDish.isSelected()||rbtMainCourse.isSelected()){
-            Dish dish = new Dish();
-            int id = dish.assingId();
-            dish.setId(id);
-            dish.setName(name);
-            dish.setPrice(price);
-            dish.setType(getTypeDish());
-            DishManager.addDish(dish);
-            JOptionPane.showMessageDialog(this,"Registro de plato exitoso" );
-            backToMenu();
+        {            
+            registryDnk(name, price);
         }
     }//GEN-LAST:event_btnAddDishActionPerformed
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
         // TODO add your handling code here:
-        int i = JOptionPane.showConfirmDialog(this, "Cancelar Registro?");
-            if(i == 0)
+        int answer = JOptionPane.showConfirmDialog(null, "¿Desea cancelar el ingreso del plato?");
+            if(answer == 0)
             {
                 backToMenu();
             }
@@ -301,17 +300,61 @@ public class FrmDish extends javax.swing.JFrame {
     private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNameActionPerformed
+    public void registryFD(String name, float price){
+        FirstDish firstDish = new FirstDish();
+            int id = firstDish.assingId();
+            firstDish.setId(id);
+            firstDish.setName(name);
+            firstDish.setPrice(price);
+            FirstDishManager.addFirstDish(firstDish);            
+            JOptionPane.showMessageDialog(rootPane,"Registro de plato exitoso" );
+            backToMenu();
+    }
+    public void registryMC(String name, float price){
+        MainCourse mainCourse = new MainCourse();
+            int id = mainCourse.assingId();
+            mainCourse.setId(id);
+            mainCourse.setName(name);
+            mainCourse.setPrice(price);
+            MainCourseManage.addMainCourse(mainCourse);
+            JOptionPane.showMessageDialog(rootPane,"Registro de plato exitoso" );
+            backToMenu();
+    }
+    public void registryDst(String name, float price){
+        Dessert dessert = new Dessert();
+            int id = dessert.assingId();
+            dessert.setId(id);
+            dessert.setName(name);
+            dessert.setPrice(price);
+            DessertManage.addDessert(dessert);
+            JOptionPane.showMessageDialog(rootPane,"Registro de plato exitoso" );
+            backToMenu();
+    }
+    public void registryDnk(String name, float price){
+        Drink product = new Drink();
+            int id = product.assingId();
+            product.setId(id);
+            product.setName(name);
+            product.setPrice(price);
+            product.setQuantity(getQuantity());
+            DrinkManager.addDrink(product);
+            JOptionPane.showMessageDialog(rootPane,"Registro de plato exitoso");
+            backToMenu();
+    }
+      
+    
     public void  backToMenu(){
         if(this.user.getUserType().equals("Administrador")){
-           FrmMenuManager menu1 = new FrmMenuManager(this.user);
-           menu1.setVisible(true);
+           FrmMenuManager menuAdmin = new FrmMenuManager(this.user);
+           menuAdmin.setVisible(true);
            this.setVisible(false); 
         }else{
-           FrmMenuEmployee menu2 = new FrmMenuEmployee(this.user);
-           menu2.setVisible(true);
+           FrmMenuEmployee menuEmployee = new FrmMenuEmployee(this.user);
+           menuEmployee.setVisible(true);
            this.setVisible(false); 
         }
     }
+    
     public int getQuantity()
     {
         int index = this.cmbQuantity.getSelectedIndex();

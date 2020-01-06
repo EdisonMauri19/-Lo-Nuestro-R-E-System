@@ -57,8 +57,8 @@ public class DrinkManager {
         drinks.get(index).setName(drink.getName());
         drinks.get(index).setPrice(drink.getPrice());
         drinks.get(index).setQuantity(drink.getQuantity());
-        File f=new File("Drink.json");
-        f.delete();
+        File file=new File("Drink.json");
+        file.delete();
         for (int i = 0; i < drinks.size(); i++) {
             addDrink(drinks.get(i));
         }
