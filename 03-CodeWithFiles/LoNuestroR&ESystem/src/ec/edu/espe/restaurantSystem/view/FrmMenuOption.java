@@ -249,21 +249,30 @@ public class FrmMenuOption extends javax.swing.JFrame {
 
     private void rbtFirstDishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtFirstDishActionPerformed
         // TODO add your handling code here:
+        FirstDish firstD = new FirstDish();
+        firstD.showProducts(tblMenuInformation,"Entrada");
+        /*
         Dish dish = new Dish();
-        dish.showProducts(tblMenuInformation, "Entrada");
+        dish.showProducts(tblMenuInformation, "Entrada");*/
         
     }//GEN-LAST:event_rbtFirstDishActionPerformed
 
     private void rbtMainCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtMainCourseActionPerformed
         // TODO add your handling code here:
+        MainCourse mainC = new MainCourse();
+        mainC.showProducts(tblMenuInformation,"Plato Fuerte");
+        /*
         Dish dish = new Dish();
-        dish.showProducts(tblMenuInformation, "Plato Fuerte");
+        dish.showProducts(tblMenuInformation, "Plato Fuerte");*/
     }//GEN-LAST:event_rbtMainCourseActionPerformed
 
     private void rbtDessertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtDessertActionPerformed
         // TODO add your handling code here:
+        Dessert dessert = new Dessert();
+        dessert.showProducts(tblMenuInformation,"Postre");
+        /*
         Dish dish = new Dish();
-        dish.showProducts(tblMenuInformation, "Postre");
+        dish.showProducts(tblMenuInformation, "Postre");*/
     }//GEN-LAST:event_rbtDessertActionPerformed
 
     private void rbtExtraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtExtraActionPerformed
@@ -274,6 +283,7 @@ public class FrmMenuOption extends javax.swing.JFrame {
 
     private void rbtDrinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtDrinkActionPerformed
         // TODO add your handling code here:
+        
         Dish dish = new Dish();
         dish.showProducts(tblMenuInformation, "");
     }//GEN-LAST:event_rbtDrinkActionPerformed
