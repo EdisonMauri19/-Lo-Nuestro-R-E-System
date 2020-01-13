@@ -5,11 +5,11 @@
  */
 package ec.edu.espe.restaurantSystem.view;
 
-import ec.edu.espe.restaurantSystem.controller.DessertManage;
+import ec.edu.espe.restaurantSystem.controller.DessertManager;
 import ec.edu.espe.restaurantSystem.controller.DishManager;
 import ec.edu.espe.restaurantSystem.controller.DrinkManager;
 import ec.edu.espe.restaurantSystem.controller.FirstDishManager;
-import ec.edu.espe.restaurantSystem.controller.MainCourseManage;
+import ec.edu.espe.restaurantSystem.controller.MainCourseManager;
 import ec.edu.espe.restaurantSystem.lib.FileLibrary;
 import ec.edu.espe.restaurantSystem.model.FirstDish;
 import ec.edu.espe.restaurantSystem.model.*;
@@ -316,7 +316,7 @@ public class FrmDish extends javax.swing.JFrame {
             mainCourse.setId(id);
             mainCourse.setName(name);
             mainCourse.setPrice(price);
-            MainCourseManage.addMainCourse(mainCourse);
+            MainCourseManager.addMainCourse(mainCourse);
             JOptionPane.showMessageDialog(rootPane,"Registro de plato exitoso" );
             backToMenu();
     }
@@ -326,7 +326,7 @@ public class FrmDish extends javax.swing.JFrame {
             dessert.setId(id);
             dessert.setName(name);
             dessert.setPrice(price);
-            DessertManage.addDessert(dessert);
+            DessertManager.addDessert(dessert);
             JOptionPane.showMessageDialog(rootPane,"Registro de plato exitoso" );
             backToMenu();
     }

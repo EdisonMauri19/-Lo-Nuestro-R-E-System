@@ -6,6 +6,11 @@
 package ec.edu.espe.restaurantSystem.view;
 
 import ec.edu.espe.restaurantSystem.model.Account;
+import ec.edu.espe.restaurantSystem.model.Dessert;
+import ec.edu.espe.restaurantSystem.model.Drink;
+import ec.edu.espe.restaurantSystem.model.Extra;
+import ec.edu.espe.restaurantSystem.model.FirstDish;
+import ec.edu.espe.restaurantSystem.model.MainCourse;
 import javax.swing.ImageIcon;
 
 /**
@@ -14,9 +19,7 @@ import javax.swing.ImageIcon;
  */
 public class FrmOrder extends javax.swing.JFrame {
     private Account user;
-    /**
-     * Creates new form frmOrder
-     */
+    
     public FrmOrder() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -58,6 +61,7 @@ public class FrmOrder extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         btnAdd = new javax.swing.JButton();
         btnAddOrder = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -117,13 +121,13 @@ public class FrmOrder extends javax.swing.JFrame {
         tblMenu.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
         tblMenu.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Nombre", "Precio"
+                "N", "Nombre", "Precio"
             }
         ));
         tblMenu.setToolTipText("Tabla de menu");
@@ -133,11 +137,26 @@ public class FrmOrder extends javax.swing.JFrame {
         rbtFirstDish.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
         rbtFirstDish.setText("Entrada");
         rbtFirstDish.setToolTipText("Plato entrada");
+        rbtFirstDish.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rbtFirstDishMouseClicked(evt);
+            }
+        });
+        rbtFirstDish.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtFirstDishActionPerformed(evt);
+            }
+        });
 
         buttonGroup1.add(rbtMainCourse);
         rbtMainCourse.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
         rbtMainCourse.setText("Plato Fuerte");
         rbtMainCourse.setToolTipText("Plato fuerte");
+        rbtMainCourse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtMainCourseActionPerformed(evt);
+            }
+        });
 
         buttonGroup1.add(rbtDessert);
         rbtDessert.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
@@ -153,11 +172,21 @@ public class FrmOrder extends javax.swing.JFrame {
         rbtDrink.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
         rbtDrink.setText("Bebida");
         rbtDrink.setToolTipText("Bebida");
+        rbtDrink.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtDrinkActionPerformed(evt);
+            }
+        });
 
         buttonGroup1.add(rbtExtra);
         rbtExtra.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
         rbtExtra.setText("Extra");
         rbtExtra.setToolTipText("Platos extras");
+        rbtExtra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtExtraActionPerformed(evt);
+            }
+        });
 
         btnBack.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
         btnBack.setText("Regresar");
@@ -173,6 +202,7 @@ public class FrmOrder extends javax.swing.JFrame {
         jLabel5.setText("Informe de la Orden");
 
         btnAdd.setText("Agregar");
+        btnAdd.setToolTipText("Seleccionar plato a la orden");
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddActionPerformed(evt);
@@ -180,11 +210,15 @@ public class FrmOrder extends javax.swing.JFrame {
         });
 
         btnAddOrder.setText("Guardar");
+        btnAddOrder.setToolTipText("Guardar nueva orden");
         btnAddOrder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddOrderActionPerformed(evt);
             }
         });
+
+        jButton1.setText("Imprimir ");
+        jButton1.setToolTipText("Imprimir orden");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -231,9 +265,15 @@ public class FrmOrder extends javax.swing.JFrame {
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(31, 31, 31))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(218, 218, 218)
-                .addComponent(btnAdd)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(218, 218, 218)
+                        .addComponent(btnAdd)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton1)
+                        .addGap(46, 46, 46)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnBack)
                     .addComponent(btnAddOrder))
@@ -245,6 +285,12 @@ public class FrmOrder extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addComponent(jLabel1)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnAddOrder)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnBack)
+                        .addGap(42, 42, 42))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -282,35 +328,56 @@ public class FrmOrder extends javax.swing.JFrame {
                                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
                         .addGap(18, 18, 18)
                         .addComponent(btnAdd)
-                        .addGap(27, 27, 27))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnAddOrder)))
-                .addGap(18, 18, 18)
-                .addComponent(btnBack)
-                .addGap(42, 42, 42))
+                        .addGap(22, 22, 22)
+                        .addComponent(jButton1)
+                        .addGap(65, 65, 65))))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void rbtDessertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtDessertActionPerformed
-        // TODO add your handling code here:
+        Dessert dessert = new Dessert();
+        dessert.showProducts(tblMenu,"Postres");
     }//GEN-LAST:event_rbtDessertActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        // TODO add your handling code here:
+       
         backToMenu();
         
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void btnAddOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddOrderActionPerformed
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_btnAddOrderActionPerformed
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_btnAddActionPerformed
+
+    private void rbtFirstDishMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rbtFirstDishMouseClicked
+      
+    }//GEN-LAST:event_rbtFirstDishMouseClicked
+
+    private void rbtFirstDishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtFirstDishActionPerformed
+        FirstDish firstD = new FirstDish();
+        firstD.showProducts(tblMenu,"Entrada");
+    }//GEN-LAST:event_rbtFirstDishActionPerformed
+
+    private void rbtMainCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtMainCourseActionPerformed
+        MainCourse mainC = new MainCourse();
+        mainC.showProducts(tblMenu,"Plato Fuerte");
+    }//GEN-LAST:event_rbtMainCourseActionPerformed
+
+    private void rbtDrinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtDrinkActionPerformed
+      Drink drink = new Drink();
+      drink.showProducts(tblMenu,"Bebida");
+    }//GEN-LAST:event_rbtDrinkActionPerformed
+
+    private void rbtExtraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtExtraActionPerformed
+        Extra extra = new Extra();
+        extra.showProducts(tblMenu,"Extra");
+    }//GEN-LAST:event_rbtExtraActionPerformed
     public void  backToMenu(){
         if(this.user.getUserType().equals("Administrador")){
            FrmMenuManager menuAdmin = new FrmMenuManager(this.user);
@@ -322,9 +389,7 @@ public class FrmOrder extends javax.swing.JFrame {
            this.setVisible(false); 
         }
     }
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -364,6 +429,7 @@ public class FrmOrder extends javax.swing.JFrame {
     private javax.swing.JButton btnBack;
     private javax.swing.ButtonGroup buttonGroup1;
     private com.toedter.calendar.JDateChooser dchDate;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;

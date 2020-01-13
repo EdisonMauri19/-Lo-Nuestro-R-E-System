@@ -17,7 +17,7 @@ import java.util.ArrayList;
  *
  * @author camyt
  */
-public class DessertManage {
+public class DessertManager {
      static Gson gson = new Gson();
     public static void addDessert(Dessert dessert){
         FileLibrary.addToFile(dessert);
@@ -57,7 +57,7 @@ public class DessertManage {
         int index = dessert.getId()-1;
         desserts.get(index).setName(dessert.getName());
         desserts.get(index).setPrice(dessert.getPrice());
-        desserts.get(index).setQuantity(dessert.getQuantity());
+
         File file=new File("Dessert.json");
         file.delete();
         for (int i = 0; i < desserts.size(); i++) {

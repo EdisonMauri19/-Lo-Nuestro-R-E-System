@@ -6,7 +6,7 @@
 package ec.edu.espe.restaurantSystem.model;
 
 import ec.edu.espe.restaurantSystem.controller.DishManager;
-import ec.edu.espe.restaurantSystem.controller.MainCourseManage;
+import ec.edu.espe.restaurantSystem.controller.MainCourseManager;
 import java.io.File;
 import java.util.ArrayList;
 import javax.swing.JTable;
@@ -48,7 +48,7 @@ public class MainCourse extends Product {
         File f = new File("MainCourse.json");
         if(f.exists())
         {
-            mainCourse = MainCourseManage.readMainCourse();
+            mainCourse = MainCourseManager.readMainCourse();
             return mainCourse.size()+1;
         }else return 1;
     }
@@ -57,7 +57,7 @@ public class MainCourse extends Product {
     public void showProducts(JTable table, String type) {
         DefaultTableModel modeloT = new DefaultTableModel();
         ArrayList<MainCourse> mainCourse;
-        mainCourse = MainCourseManage.readMainCourse();
+        mainCourse = MainCourseManager.readMainCourse();
         
         table.setModel(modeloT);
         modeloT.addColumn("Número");

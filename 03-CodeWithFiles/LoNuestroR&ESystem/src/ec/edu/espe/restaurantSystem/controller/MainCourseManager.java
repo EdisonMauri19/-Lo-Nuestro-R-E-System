@@ -22,7 +22,7 @@ import java.util.ArrayList;
  *
  * @author user
  */
-public class MainCourseManage{
+public class MainCourseManager{
     static Gson gson = new Gson();
     public static void addMainCourse(MainCourse mainCourse){
         FileLibrary.addToFile(mainCourse);
