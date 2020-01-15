@@ -276,19 +276,19 @@ public class FrmEvent extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void rbtFirstDishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtFirstDishActionPerformed
-        // TODO add your handling code here:
+    
     }//GEN-LAST:event_rbtFirstDishActionPerformed
 
     private void rbtDessertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtDessertActionPerformed
-        // TODO add your handling code here:
+      
     }//GEN-LAST:event_rbtDessertActionPerformed
 
     private void rbtThirdDishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtThirdDishActionPerformed
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_rbtThirdDishActionPerformed
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
-        // TODO add your handling code here:
+
          if(this.user.getUserType().equals("Administrador")){
            FrmMenuManager menuAdmin = new FrmMenuManager(this.user);
            menuAdmin.setVisible(true);
@@ -302,7 +302,7 @@ public class FrmEvent extends javax.swing.JFrame {
     }//GEN-LAST:event_btnExitActionPerformed
 
     private void rbtSecondDishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtSecondDishActionPerformed
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_rbtSecondDishActionPerformed
     
     /**

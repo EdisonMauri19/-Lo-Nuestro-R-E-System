@@ -234,7 +234,7 @@ public class FrmMenuOption extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        // TODO add your handling code here:
+
         if(this.user.getUserType().equals("Administrador")){
            FrmMenuManager menuAdmin = new FrmMenuManager(this.user);
            menuAdmin.setVisible(true);
@@ -248,7 +248,7 @@ public class FrmMenuOption extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void rbtFirstDishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtFirstDishActionPerformed
-        // TODO add your handling code here:
+       
         FirstDish firstD = new FirstDish();
         firstD.showProducts(tblMenuInformation,"Entrada");
         /*
@@ -258,7 +258,7 @@ public class FrmMenuOption extends javax.swing.JFrame {
     }//GEN-LAST:event_rbtFirstDishActionPerformed
 
     private void rbtMainCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtMainCourseActionPerformed
-        // TODO add your handling code here:
+        
         MainCourse mainC = new MainCourse();
         mainC.showProducts(tblMenuInformation,"Plato Fuerte");
         /*
@@ -267,7 +267,7 @@ public class FrmMenuOption extends javax.swing.JFrame {
     }//GEN-LAST:event_rbtMainCourseActionPerformed
 
     private void rbtDessertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtDessertActionPerformed
-        // TODO add your handling code here:
+        
         Dessert dessert = new Dessert();
         dessert.showProducts(tblMenuInformation,"Postre");
         /*
@@ -276,14 +276,13 @@ public class FrmMenuOption extends javax.swing.JFrame {
     }//GEN-LAST:event_rbtDessertActionPerformed
 
     private void rbtExtraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtExtraActionPerformed
-        // TODO add your handling code here:
+        
         Dish dish = new Dish();
         dish.showProducts(tblMenuInformation, "Extra");
     }//GEN-LAST:event_rbtExtraActionPerformed
 
     private void rbtDrinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtDrinkActionPerformed
-        // TODO add your handling code here:
-        
+       
         Dish dish = new Dish();
         dish.showProducts(tblMenuInformation, "");
     }//GEN-LAST:event_rbtDrinkActionPerformed

@@ -11,7 +11,9 @@ import ec.edu.espe.restaurantSystem.model.Drink;
 import ec.edu.espe.restaurantSystem.model.Extra;
 import ec.edu.espe.restaurantSystem.model.FirstDish;
 import ec.edu.espe.restaurantSystem.model.MainCourse;
+import ec.edu.espe.restaurantSystem.validation.Id;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -102,6 +104,11 @@ public class FrmOrder extends javax.swing.JFrame {
 
         txtId.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
         txtId.setToolTipText("Ingrese la cedula del cliente");
+        txtId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIdActionPerformed(evt);
+            }
+        });
 
         lblMenu.setFont(new java.awt.Font("Trebuchet MS", 0, 13)); // NOI18N
         lblMenu.setText("Menu");
@@ -377,7 +384,14 @@ public class FrmOrder extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void btnAddOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddOrderActionPerformed
-       
+         Id id = new Id();
+        String ids = txtId.getText();
+        boolean val = id.idValidation(ids);
+        if (val != true){
+            JOptionPane.showMessageDialog(this, "Ingreso de cedula incorrecto\n Ingrese de nuevo", "Error", JOptionPane.ERROR_MESSAGE);
+           
+            txtId.setText("");}
+        
     }//GEN-LAST:event_btnAddOrderActionPerformed
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
@@ -407,6 +421,11 @@ public class FrmOrder extends javax.swing.JFrame {
         Extra extra = new Extra();
         extra.showProducts(tblMenu,"Extra");
     }//GEN-LAST:event_rbtExtraActionPerformed
+
+    private void txtIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdActionPerformed
+       
+        
+    }//GEN-LAST:event_txtIdActionPerformed
     public void  backToMenu(){
         if(this.user.getUserType().equals("Administrador")){
            FrmMenuManager menuAdmin = new FrmMenuManager(this.user);

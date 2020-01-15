@@ -7,6 +7,7 @@ package ec.edu.espe.restaurantSystem.view;
 
 import ec.edu.espe.restaurantSystem.controller.AccountManager;
 import ec.edu.espe.restaurantSystem.model.Account;
+import ec.edu.espe.restaurantSystem.validation.Letter;
 import java.awt.HeadlessException;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -81,6 +82,11 @@ public class FrmNewAccount extends javax.swing.JFrame {
 
         txtName.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         txtName.setToolTipText("Ingrese su nombre");
+        txtName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNameActionPerformed(evt);
+            }
+        });
         txtName.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtNameKeyTyped(evt);
@@ -256,6 +262,11 @@ public class FrmNewAccount extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_btnAddAccountActionPerformed
+
+    private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
+ 
+                
+    }//GEN-LAST:event_txtNameActionPerformed
 
     private void createNewAccount() throws HeadlessException {
         if(txtPassword.getText().length() >= 8)

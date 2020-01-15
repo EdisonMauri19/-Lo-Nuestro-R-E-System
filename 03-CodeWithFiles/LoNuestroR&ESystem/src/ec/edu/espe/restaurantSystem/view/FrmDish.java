@@ -238,37 +238,37 @@ public class FrmDish extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void rbtDrinkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtDrinkActionPerformed
-        // TODO add your handling code here:
+        
         this.cmbQuantity.setVisible(true);
         this.lblQuantity.setVisible(true);
     }//GEN-LAST:event_rbtDrinkActionPerformed
 
     private void rbtFirstDishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtFirstDishActionPerformed
-        // TODO add your handling code here:
+        
         this.cmbQuantity.setVisible(false);
         this.lblQuantity.setVisible(false);
     }//GEN-LAST:event_rbtFirstDishActionPerformed
 
     private void rbtMainCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtMainCourseActionPerformed
-        // TODO add your handling code here:
+        
         this.cmbQuantity.setVisible(false);
         this.lblQuantity.setVisible(false);
     }//GEN-LAST:event_rbtMainCourseActionPerformed
 
     private void rbtDessertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtDessertActionPerformed
-        // TODO add your handling code here:
+        
         this.cmbQuantity.setVisible(false);
         this.lblQuantity.setVisible(false);
     }//GEN-LAST:event_rbtDessertActionPerformed
 
     private void rbtExtraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtExtraActionPerformed
-        // TODO add your handling code here:
+       
         this.cmbQuantity.setVisible(false);
         this.lblQuantity.setVisible(false);
     }//GEN-LAST:event_rbtExtraActionPerformed
 
     private void btnAddDishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddDishActionPerformed
-        // TODO add your handling code here:
+        
         String type;
         String name = this.txtName.getText();
         float price = Float.parseFloat(this.spiPrice.getValue().toString());
@@ -289,7 +289,7 @@ public class FrmDish extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAddDishActionPerformed
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
-        // TODO add your handling code here:
+        
         int answer = JOptionPane.showConfirmDialog(null, "¿Desea cancelar el ingreso del plato?");
             if(answer == 0)
             {
@@ -298,7 +298,7 @@ public class FrmDish extends javax.swing.JFrame {
     }//GEN-LAST:event_btnExitActionPerformed
 
     private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_txtNameActionPerformed
     public void registryFD(String name, float price){
         FirstDish firstDish = new FirstDish();
